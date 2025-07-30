@@ -1,0 +1,6 @@
+@BE_Nhahang_HostAddress = http://localhost:5014
+
+GET {{BE_Nhahang_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

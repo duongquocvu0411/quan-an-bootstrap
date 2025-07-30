@@ -1,0 +1,92 @@
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 1400px;
+}
+
+/* Tiêu đề chính */
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  transition: color 0.3s ease;
+}
+
+h2.text-dark {
+  color: #343a40 !important;
+}
+
+h2.text-light {
+  color: #f8f9fa !important;
+}
+
+/* Quick stats */
+.stat-card {
+  border-radius: 1rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #cda45e;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 0.3rem;
+  transition: color 0.3s ease;
+}
+
+/* Card */
+.card {
+  border: none;
+  border-radius: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* Chart fix */
+.chart-container {
+  position: relative;
+  height: 300px;
+}
+
+/* Table */
+.table thead {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.table-dark thead {
+  background-color: #212529 !important;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 0.4em 0.75em;
+  border-radius: 999px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Toggle button */
+.btn-toggle {
+  border-radius: 30px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Sáng tinh chỉnh */
+body.bg-light .stat-card {
+  background-color: #fff;
+  color: #212529;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}

@@ -1,0 +1,6 @@
+# Chặn thư mục build
+bin/
+obj/
+
+# Chặn file cấu hình nhạy cảm
+appsettings.json

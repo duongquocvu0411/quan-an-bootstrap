@@ -1,0 +1,23 @@
+.navmenu {
+  display: flex;
+}
+
+.navmenu-mobile {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  flex-direction: column;
+  display: block;
+  z-index: 999;
+}
+
+.navmenu-mobile ul {
+  flex-direction: column;
+}
+
+.mobile-nav-toggle {
+  font-size: 28px;
+  cursor: pointer;
+}

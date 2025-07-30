@@ -1,0 +1,46 @@
+.custom-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+  z-index: 998;
+}
+
+.custom-sidebar.open {
+  width: 250px;
+}
+
+.custom-sidebar.closed {
+  width: 60px;
+}
+
+.sidebar-dark {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+.sidebar-light {
+  background-color: #f8f9fa;
+  color: #212529;
+  border-right: 1px solid #dee2e6;
+}
+
+.custom-sidebar .nav-link {
+  color: inherit;
+  white-space: nowrap;
+}
+
+.custom-sidebar .nav-link:hover,
+.custom-sidebar .nav-link.active {
+  background-color: #cda45e;
+  color: white !important;
+  border-radius: 5px;
+}
+
+.toggle-sidebar-btn {
+  z-index: 999;
+  border-radius: 0 6px 6px 0;
+  padding: 8px 10px;
+}
