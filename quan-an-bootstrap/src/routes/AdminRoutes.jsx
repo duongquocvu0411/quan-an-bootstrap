@@ -10,6 +10,10 @@ import { DarkModeProvider } from '../component/Admin/DarkModeContext';
 import FoodsTable from '../component/Admin/Page/FoodsTable';
 import FoodForm from '../component/Admin/Form/FoodForm';
 
+import TableManagement from '../component/Admin/Page/TableManagement';
+import TableForm from '../component/Admin/Form/TableForm';
+import BookingDetail from '../component/Admin/Form/BookingDetail';
+
 
 const AdminRoutes = () => {
   return (
@@ -34,10 +38,17 @@ const AdminRoutes = () => {
 
       {/* foods */}
       <Route path="foods" element={<FoodsTable />} />
-<Route path="foods/add" element={<FoodForm mode="add" />} />
-<Route path="foods/edit/:id" element={<FoodForm mode="edit" />} />
-<Route path="foods/detail/:id" element={<FoodForm mode="detail" />} />
+      <Route path="foods/add" element={<FoodForm mode="add" />} />
+      <Route path="foods/edit/:id" element={<FoodForm mode="edit" />} />
+      <Route path="foods/detail/:id" element={<FoodForm mode="detail" />} />
 
+
+        {/* Table */}
+        <Route path="tables" element={<TableManagement />} />
+        <Route path="tables/add" element={<TableForm mode="add" />} />
+        <Route path="tables/edit/:id" element={<TableForm mode="edit" />} />
+        <Route path="tables/detail/:id" element={<TableForm mode="detail" />} />
+        <Route path="bookings/detail/:id" element={<BookingDetail />} />
       </Route>
     </Routes></DarkModeProvider>
   );

@@ -14,7 +14,7 @@ import 'react-image-lightbox/style.css';
 
 AOS.init();
 
-// ✅ Ẩn toàn bộ console trong môi trường production
+//  Ẩn toàn bộ console trong môi trường production
 if (process.env.NODE_ENV === 'production') {
   console.log = () => { };
   console.warn = () => { };

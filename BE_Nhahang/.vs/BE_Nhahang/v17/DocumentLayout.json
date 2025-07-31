@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\controllers\\admin\\table\\booking\\tablesuggestioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\controllers\\admin\\table\\booking\\tablesuggestioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\interfaces\\admin\\table\\booking\\tablesuggestionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\interfaces\\admin\\table\\booking\\tablesuggestionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\interfaces\\admin\\table\\booking\\itablesuggestionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\interfaces\\admin\\table\\booking\\itablesuggestionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\models\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\models\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\models\\entities\\table\\tablemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\models\\entities\\table\\tablemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\extensions\\servicecollectionextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\extensions\\servicecollectionextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\dtos\\admin\\tables\\booking\\suggesttabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\dtos\\admin\\tables\\booking\\suggesttabledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PagedResult.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Models\\PagedResult.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Models\\PagedResult.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Models\\PagedResult.cs",
+              "RelativeToolTip": "BE_Nhahang\\Models\\PagedResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T03:33:48.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ServiceCollectionExtension.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
+              "RelativeToolTip": "BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAqwB8AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T03:08:42.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\appsettings.json",
-              "RelativeDocumentMoniker": "BE_Nhahang\\appsettings.json",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\appsettings.json",
-              "RelativeToolTip": "BE_Nhahang\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-30T09:14:07.296Z",
+              "Title": "TableSuggestionController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Controllers\\Admin\\Table\\Booking\\TableSuggestionController.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Controllers\\Admin\\Table\\Booking\\TableSuggestionController.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Controllers\\Admin\\Table\\Booking\\TableSuggestionController.cs",
+              "RelativeToolTip": "BE_Nhahang\\Controllers\\Admin\\Table\\Booking\\TableSuggestionController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T03:07:59.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TableSuggestionService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Table\\Booking\\TableSuggestionService.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Interfaces\\Admin\\Table\\Booking\\TableSuggestionService.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Table\\Booking\\TableSuggestionService.cs",
+              "RelativeToolTip": "BE_Nhahang\\Interfaces\\Admin\\Table\\Booking\\TableSuggestionService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T03:06:35.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ITableSuggestionService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Table\\Booking\\ITableSuggestionService.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Interfaces\\Admin\\Table\\Booking\\ITableSuggestionService.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Table\\Booking\\ITableSuggestionService.cs",
+              "RelativeToolTip": "BE_Nhahang\\Interfaces\\Admin\\Table\\Booking\\ITableSuggestionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T03:06:16.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SuggestTableDTO.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\DTOS\\Admin\\Tables\\Booking\\SuggestTableDTO.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\DTOS\\Admin\\Tables\\Booking\\SuggestTableDTO.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\DTOS\\Admin\\Tables\\Booking\\SuggestTableDTO.cs",
+              "RelativeToolTip": "BE_Nhahang\\DTOS\\Admin\\Tables\\Booking\\SuggestTableDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T03:05:40.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TableModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Models\\Entities\\Table\\TableModel.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Models\\Entities\\Table\\TableModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Models\\Entities\\Table\\TableModel.cs",
+              "RelativeToolTip": "BE_Nhahang\\Models\\Entities\\Table\\TableModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T03:02:33.793Z",
               "EditorCaption": ""
             }
           ]

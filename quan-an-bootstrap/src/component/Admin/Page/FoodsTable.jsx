@@ -10,7 +10,7 @@ import '../css/FoodCategoryPagination.css';
 import { getAllFoods, deleteFoods } from '../../../be/Admin/Foods/Foods.api';
 
 const FoodsTable = () => {
-  const { darkMode } = useContext(DarkModeContext);
+  // const { darkMode } = useContext(DarkModeContext);
   const navigate = useNavigate();
 
   const [foods, setFoods] = useState([]);
@@ -88,7 +88,7 @@ const FoodsTable = () => {
   };
 
   return (
-    <div className={`d-flex ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
+    <div className={`d-flex `}>
       <Sidebar />
       <div className="container py-4" style={{ marginLeft: '250px' }}>
         <nav aria-label="breadcrumb">
@@ -113,14 +113,14 @@ const FoodsTable = () => {
           </div>
         )}
 
-        <div className={`card shadow-sm mb-4 ${darkMode ? 'bg-secondary text-white' : 'bg-white text-dark'}`}>
+        <div className={`card shadow-sm mb-4 `}>
           <div className="card-body">
             <h5 className="card-title mb-3">
               <i className="bi bi-tags-fill me-2"></i>Danh sách món ăn
             </h5>
 
             <table className="table table-bordered table-hover">
-              <thead className={darkMode ? 'table-dark' : 'table-light'}>
+              <thead className="table-dark">
                 <tr>
                   <th>
                     <input
