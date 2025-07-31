@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import Lightbox from 'react-image-lightbox';
 import ReactPaginate from 'react-paginate';
 import { addTable, getTableById, updateTable } from '../../../be/Admin/Tables/Table.api';
+import BookingLookupModal from '../Modal/BookingLookupModal';
 
 const TableForm = ({ mode }) => {
   const { id } = useParams();
@@ -40,6 +41,7 @@ const TableForm = ({ mode }) => {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [loading,setLoading] = useState(false);
+  const [showLookupModal, setShowLookupModal] = useState(false);
 
   const fetchDetail = async (page) => {
     try {
@@ -307,66 +309,84 @@ const handleSubmit = async (e) => {
 
             </form>
 
-            {isDetail && (
-              <div className="mt-5">
-                <h5 className="mb-3"><i className="bi bi-clock-history me-2"></i>Lịch sử đặt bàn</h5>
-                <table className="table table-bordered">
-                  <thead className="table-light">
-                    <tr>
-                      <th>#</th>
-                      <th>Tên KH</th>
-                      <th>Email</th>
-                      <th>Điện thoại</th>
-                      <th>Số khách</th>
-                      <th>Thời gian</th>
-                      <th>Trạng thái</th>
-                      <th>Hành động</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {bookingData?.results?.length === 0 ? (
-                      <tr>
-                        <td colSpan="8" className="text-center">Không có lượt đặt nào</td>
-                      </tr>
-                    ) : (
-                      bookingData.results.map((b, i) => (
-                        <tr key={b.id}>
-                          <td>{(bookingData.currentPage - 1) * bookingData.pageSize + i + 1}</td>
-                          <td>{b.customerName}</td>
-                          <td>{b.customerEmail}</td>
-                          <td>{b.customerPhone}</td>
-                          <td>{b.guestCount}</td>
-                          <td>{moment(b.bookingTime).format('DD/MM/YYYY HH:mm')}</td>
-                          <td>{b.status}</td>
-                          <td>
-                            <button className="btn btn-sm btn-info" onClick={() => navigate(`/admin/bookings/detail/${b.id}`)}>
-                              <i className="bi bi-eye me-1"></i>Xem
-                            </button>
-                          </td>
-                        </tr>
-                      ))
-                    )}
-                  </tbody>
-                </table>
-                {bookingData.totalPages > 1 && (
-                  <ReactPaginate
-                    pageCount={bookingData.totalPages}
-                    onPageChange={handlePageChange}
-                    forcePage={bookingData.currentPage - 1}
-                    containerClassName={'pagination justify-content-center'}
-                    pageClassName={'page-item'}
-                    pageLinkClassName={'page-link'}
-                    previousLabel={'←'}
-                    nextLabel={'→'}
-                    previousClassName={'page-item'}
-                    previousLinkClassName={'page-link'}
-                    nextClassName={'page-item'}
-                    nextLinkClassName={'page-link'}
-                    activeClassName={'active'}
-                  />
-                )}
-              </div>
-            )}
+           {isDetail && (
+  <div className="mt-5">
+    <div className="d-flex justify-content-between align-items-center mb-3">
+      <h5 className="mb-0">
+        <i className="bi bi-clock-history me-2"></i>Lịch sử đặt bàn
+      </h5>
+      <button
+        className="btn btn-outline-primary btn-sm"
+        onClick={() => setShowLookupModal(true)}
+      >
+        <i className="bi bi-search me-1"></i>Tra cứu đơn đặt bàn
+      </button>
+    </div>
+
+    <table className="table table-bordered">
+      <thead className="table-light">
+        <tr>
+          <th>#</th>
+          <th>Mã đơn hàng</th>
+          <th>Tên KH</th>
+          <th>Email</th>
+          <th>Điện thoại</th>
+          <th>Số khách</th>
+          <th>Thời gian</th>
+          <th>Trạng thái</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        {bookingData?.results?.length === 0 ? (
+          <tr>
+            <td colSpan="9" className="text-center">Không có lượt đặt nào</td>
+          </tr>
+        ) : (
+          bookingData.results.map((b, i) => (
+            <tr key={b.id}>
+              <td>{(bookingData.currentPage - 1) * bookingData.pageSize + i + 1}</td>
+              <td>{b.bookingCode}</td>
+              <td>{b.customerName}</td>
+              <td>{b.customerEmail}</td>
+              <td>{b.customerPhone}</td>
+              <td>{b.guestCount}</td>
+              <td>{moment(b.bookingTime).format('DD/MM/YYYY HH:mm')}</td>
+              <td>{b.status}</td>
+              <td>
+                <button
+                  className="btn btn-sm btn-info"
+                  onClick={() => navigate(`/admin/bookings/detail/${b.id}`)}
+                >
+                  <i className="bi bi-eye me-1"></i>Xem
+                </button>
+              </td>
+            </tr>
+          ))
+        )}
+      </tbody>
+    </table>
+
+    {bookingData.totalPages > 1 && (
+      <ReactPaginate
+        pageCount={bookingData.totalPages}
+        onPageChange={handlePageChange}
+        forcePage={bookingData.currentPage - 1}
+        containerClassName={'pagination justify-content-center'}
+        pageClassName={'page-item'}
+        pageLinkClassName={'page-link'}
+        previousLabel={'←'}
+        nextLabel={'→'}
+        previousClassName={'page-item'}
+        previousLinkClassName={'page-link'}
+        nextClassName={'page-item'}
+        nextLinkClassName={'page-link'}
+        activeClassName={'active'}
+      />
+    )}
+  </div>
+)}
+
           </div>
         </div>
       </div>
@@ -381,6 +401,7 @@ const handleSubmit = async (e) => {
         />
       )}
       <ToastContainer />
+      <BookingLookupModal show={showLookupModal} onHide={() => setShowLookupModal(false)} />
     </div>
   );
 };

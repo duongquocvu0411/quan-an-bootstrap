@@ -15,6 +15,11 @@ namespace BE_Nhahang.Models.Entities.Table
         public TableModel? Table { get; set; }
 
         [Required]
+        [MaxLength(20)]
+        public string BookingCode { get; set; } = string.Empty;
+
+
+        [Required]
         public string CustomerName { get; set; } = string.Empty;
 
         [Required]

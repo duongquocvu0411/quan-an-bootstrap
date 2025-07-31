@@ -16,30 +16,32 @@ namespace BE_Nhahang.Services.Admin.Sendmail
 
         public async Task SendEmailAsync(string toEmail, string subject, string htmlContent)
         {
-            try
+            await Task.Run(async () =>
             {
-                // Try SendGrid first
-                var client = new SendGridClient(_config["SendGrid:ApiKey"]);
-                var from = new EmailAddress(_config["SendGrid:SenderEmail"], _config["SendGrid:SenderName"]);
-                var to = new EmailAddress(toEmail);
-                var msg = MailHelper.CreateSingleEmail(from, to, subject, "", htmlContent);
-
-                var result = await client.SendEmailAsync(msg);
-
-                if (result.StatusCode != System.Net.HttpStatusCode.Accepted)
+                try
                 {
-                    var error = await result.Body.ReadAsStringAsync();
-                    Console.WriteLine($"[SendGrid ERROR] {result.StatusCode} - {error}");
-                    // fallback to SMTP
+                    // Gửi bằng SendGrid
+                    var client = new SendGridClient(_config["SendGrid:ApiKey"]);
+                    var from = new EmailAddress(_config["SendGrid:SenderEmail"], _config["SendGrid:SenderName"]);
+                    var to = new EmailAddress(toEmail);
+                    var msg = MailHelper.CreateSingleEmail(from, to, subject, "", htmlContent);
+
+                    var result = await client.SendEmailAsync(msg);
+
+                    if (result.StatusCode != System.Net.HttpStatusCode.Accepted)
+                    {
+                        var error = await result.Body.ReadAsStringAsync();
+                        Console.WriteLine($"[SendGrid ERROR] {result.StatusCode} - {error}");
+                        // fallback to SMTP
+                        await SendViaSmtpAsync(toEmail, subject, htmlContent);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[SendGrid EXCEPTION] {ex.Message}");
                     await SendViaSmtpAsync(toEmail, subject, htmlContent);
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"[SendGrid EXCEPTION] {ex.Message}");
-                // fallback to SMTP
-                await SendViaSmtpAsync(toEmail, subject, htmlContent);
-            }
+            });
         }
 
         private async Task SendViaSmtpAsync(string toEmail, string subject, string htmlContent)
@@ -60,9 +62,9 @@ namespace BE_Nhahang.Services.Admin.Sendmail
 
                 using var smtp = new MailKit.Net.Smtp.SmtpClient();
                 await smtp.ConnectAsync(
-                  _config["Smtp:Host"],
-                  int.Parse(_config["Smtp:Port"]),
-                  MailKit.Security.SecureSocketOptions.StartTls); 
+                    _config["Smtp:Host"],
+                    int.Parse(_config["Smtp:Port"]),
+                    MailKit.Security.SecureSocketOptions.StartTls);
 
                 await smtp.AuthenticateAsync(_config["Smtp:Username"], _config["Smtp:Password"]);
                 await smtp.SendAsync(message);

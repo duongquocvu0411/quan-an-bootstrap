@@ -34,6 +34,24 @@ namespace BE_Nhahang.Interfaces.Admin.Log
             _context.SystemLogs.Add(log);
             await _context.SaveChangesAsync();
         }
+
+        public async Task LogAsyncs(string Userid,string action, string entityName, string entityId = null, string message = null)
+        {
+            
+            var log = new SystemLogModel
+            {
+                UserId =Userid,
+                Action = action,
+                EntityName = entityName,
+                EntityId = entityId,
+                Message = message,
+                CreatedAt = DateTime.UtcNow
+            };
+
+            _context.SystemLogs.Add(log);
+            await _context.SaveChangesAsync();
+        }
     }
 }
+
 

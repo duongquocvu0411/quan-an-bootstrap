@@ -91,7 +91,7 @@ namespace BE_Nhahang.Interfaces.Admin.Table
             // Lấy danh sách booking của bàn đó, có phân trang
             var query = _context.TableBookings
                 .Where(b => b.TableId == id)
-                .OrderByDescending(b => b.BookingTime); // ưu tiên theo thời gian đặt
+                .OrderByDescending(b => b.Status == "Booked"); // ưu tiên theo thời gian đặt
 
             var totalCount = await query.CountAsync();
             var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
@@ -102,6 +102,7 @@ namespace BE_Nhahang.Interfaces.Admin.Table
                 .Select(b => new
                 {
                     b.Id,
+                    b.BookingCode,
                     b.CustomerName,
                     b.CustomerEmail,
                     b.CustomerPhone,
