@@ -23,6 +23,9 @@ namespace BE_Nhahang.Models.Entities.Table
         [Required]
         public decimal PriceAtOrder { get; set; }
 
+        [Required]
+        public decimal? TotalPrice { get; set; }
+
         public string? Note { get; set; }
 
         public string Status { get; set; } = "Ordered"; // Ordered, Cooking, Served, Canceled

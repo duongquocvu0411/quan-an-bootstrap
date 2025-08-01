@@ -10,8 +10,9 @@ import '../css/FoodCategoryPagination.css';
 import { getAllFoods, deleteFoods } from '../../../be/Admin/Foods/Foods.api';
 
 const FoodsTable = () => {
-  // const { darkMode } = useContext(DarkModeContext);
+  const { darkMode } = useContext(DarkModeContext);
   const navigate = useNavigate();
+
 
   const [foods, setFoods] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
@@ -94,7 +95,7 @@ const FoodsTable = () => {
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
-            <li className="breadcrumb-item active" aria-current="page">Món ăn</li>
+             <li className={`breadcrumb-item active ${darkMode ? 'sidebar-dark bg-dark text-light' : 'sidebar-light bg-white text-dark'}`} aria-current="page">Món ăn</li>
           </ol>
         </nav>
 

@@ -9,6 +9,7 @@ using BE_Nhahang.Interfaces.Admin.Sendmail;
 using BE_Nhahang.Interfaces.Admin.Table;
 using BE_Nhahang.Interfaces.Admin.Table.Booking;
 using BE_Nhahang.Interfaces.Admin.Table.Booking.CreateBooking;
+using BE_Nhahang.Interfaces.Admin.Table.Booking.Order;
 using BE_Nhahang.Interfaces.Jwt;
 using BE_Nhahang.Services.Admin.Auth;
 using BE_Nhahang.Services.Admin.Auth.Account;
@@ -34,6 +35,7 @@ namespace BE_Nhahang.Extensions
             services.AddScoped<ITableService, TableService>();
             services.AddScoped<ITableSuggestionService, TableSuggestionService>();
             services.AddScoped<ITableBookingService, TableBookingService>();
+            services.AddScoped<ITableOrderService, TableOrderService>();
 
             // thêm các service khác ở đây
             services.AddScoped<IHttpContextAccessorService, HttpContextAccessorService>();

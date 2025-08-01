@@ -98,6 +98,26 @@ const TableManagement = () => {
     t.tableNumber.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const getStatusBadge = (statusRaw) => {
+    const status = String(statusRaw || '').toLowerCase();
+
+    // map màu 
+    const map = {
+      available: { className: 'bg-success', label: 'Available' },
+      reserved:  { className: 'bg-warning text-dark', label: 'Reserved' },
+      occupied:  { className: 'bg-danger', label: 'Occupied' },
+    };
+
+    const picked = map[status] || {className: 'bg-secondary', label: statusRaw || 'Unknown'}
+
+    return(
+      <span className={`badge rounded-pill ${picked.className}`}>
+      {picked.label}
+    </span>
+    )
+
+  }
+
   const role = Cookies.get('roles')
 
   return (
@@ -187,7 +207,7 @@ const TableManagement = () => {
                         <td>{t.tableNumber}</td>
                         <td>{t.capacity} người</td>
                         <td>{t.location}</td>
-                        <td>{t.status}</td>
+                        <td>{getStatusBadge(t.status  )}</td>
                         <td>{moment(t.createdAt).format('DD/MM/YYYY HH:mm')}</td>
                         <td>
                           {showDeleted ? (

@@ -182,7 +182,7 @@ const handleSubmit = async (e) => {
       <ol className="breadcrumb">
         <li className="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
         <li className="breadcrumb-item"><a href="/admin/tables">Danh sách bàn ăn</a></li>
-        <li className="breadcrumb-item active">
+         <li className={`breadcrumb-item active ${darkMode ? 'sidebar-dark bg-dark text-light' : 'sidebar-light bg-white text-dark'}`} aria-current="page">
           {mode === 'add' && 'Thêm bàn ăn'}
           {mode === 'edit' && `Chỉnh sửa bàn #${id}`}
           {mode === 'detail' && `Chi tiết bàn #${id}`}

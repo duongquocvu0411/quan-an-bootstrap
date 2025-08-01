@@ -67,3 +67,6 @@ export const updateBookingStatus = async (bookingId, newStatus) => {
     throw error;
   }
 };
+
+
+

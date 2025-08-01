@@ -41,7 +41,7 @@ namespace BE_Nhahang.Interfaces.Admin.Table.Booking.CreateBooking
             if (pageSize <= 0) pageSize = 10;
 
             var query = _db.Set<TableBookingModel>()
-                           .AsNoTracking()       
+                           .AsNoTracking() 
                            .OrderByDescending(x => x.BookingTime);
 
             var totalCount = await query.CountAsync();

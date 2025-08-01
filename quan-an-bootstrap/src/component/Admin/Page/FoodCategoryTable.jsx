@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import moment from 'moment';
 import ReactPaginate from 'react-paginate';
 import { useNavigate } from 'react-router-dom';
@@ -6,6 +6,7 @@ import '../css/FoodCategoryPagination.css';
 import Sidebar from './Sidebar';
 import { deleteCategory, getAllCategories } from './../../../be/Admin/category/category.api';
 import { toast, ToastContainer } from 'react-toastify';
+import { DarkModeContext } from '../DarkModeContext';
 
 
 const FoodCategoryTable = () => {
@@ -14,6 +15,7 @@ const FoodCategoryTable = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const itemsPerPage = 20;
   const navigate = useNavigate();
+  const { darkMode } = useContext(DarkModeContext);
 
  useEffect(() => {
     const fetchData = async () => {
@@ -64,7 +66,7 @@ const handleDelete = async (id) => {
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
-            <li className="breadcrumb-item active" aria-current="page">Danh mục món ăn</li>
+            <li className={`breadcrumb-item active ${darkMode ? 'sidebar-dark bg-dark text-light' : 'sidebar-light bg-white text-dark'}`} aria-current="page">Danh mục món ăn</li>
           </ol>
         </nav>
 

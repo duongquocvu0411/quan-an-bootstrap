@@ -30,7 +30,7 @@ const Sidebar = () => {
         className={`custom-sidebar shadow-lg ${darkMode ? 'sidebar-dark bg-dark text-light' : 'sidebar-light bg-white text-dark'} ${isOpen ? 'open' : 'closed'}`}
       >
         <div className="sidebar-header text-center py-4 border-bottom border-secondary">
-          <h5 className="mb-0">
+          <h5 className={`mb-0 ${darkMode ? 'sidebar-dark bg-dark text-light' : 'sidebar-light bg-white text-dark'} `}>
             <i className="bi bi-shop me-2"></i>
             {isOpen && 'Quản lý Quán Ăn'}
           </h5>

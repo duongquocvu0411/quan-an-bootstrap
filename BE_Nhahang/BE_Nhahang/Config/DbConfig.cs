@@ -3,6 +3,7 @@ using BE_Nhahang.Models.Entities.Table;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 
 
 namespace BE_Nhahang.Config
@@ -78,7 +79,10 @@ namespace BE_Nhahang.Config
                 .HasForeignKey(o => o.BookingId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-          
+            builder.Entity<TableOrderModel>()
+                .Property(o => o.TotalPrice)
+                .HasPrecision(18, 2);
+
 
         }
     }

@@ -65,6 +65,7 @@ namespace BE_Nhahang
 
             // 6. Swagger với ổ khóa JWT
             builder.Services.AddEndpointsApiExplorer();
+
             builder.Services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
@@ -97,6 +98,9 @@ namespace BE_Nhahang
                         Array.Empty<string>()
                     }
             });
+                var xmlFilename = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+
             });
 
             var app = builder.Build();

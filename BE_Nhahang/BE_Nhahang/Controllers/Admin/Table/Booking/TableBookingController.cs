@@ -20,13 +20,13 @@ namespace BE_Nhahang.Controllers.Admin.Table.Booking
         }
 
         [HttpGet("list")]
-     
+        [Authorize]
         public async Task<ActionResult<ResponseDTO<PagedResult<TableBookingModel>>>> GetAll(
        [FromQuery] int page = 1,
        [FromQuery] int pageSize = 10)
         {
             var res = await _bookingService.GetAllAsync(page, pageSize);
-            return StatusCode(res.code, res); // trả đúng mã code trong ResponseDTO
+            return StatusCode(res.code, res); 
         }
 
 

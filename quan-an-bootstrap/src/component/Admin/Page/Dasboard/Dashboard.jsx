@@ -54,20 +54,9 @@ const Dashboard = () => {
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item"><a href="/admin/dashboard">Trang chủ</a></li>
-            <li className="breadcrumb-item active" aria-current="page">Dashboard</li>
+             <li className={`breadcrumb-item active ${darkMode ? 'sidebar-dark bg-dark text-light' : 'sidebar-light bg-white text-dark'}`} aria-current="page">Dashboard</li>
           </ol>
         </nav>
-
-        {/* Toggle dark/light mode */}
-        {/* <div className="d-flex justify-content-end mb-3">
-          <button
-            className={`btn btn-toggle ${darkMode ? 'btn-warning' : 'btn-outline-dark'}`}
-            onClick={() => setDarkMode(!darkMode)}
-          >
-            <i className={`bi ${darkMode ? 'bi-brightness-high-fill' : 'bi-moon-fill'} me-2`}></i>
-            {darkMode ? 'Chế độ Sáng' : 'Chế độ Tối'}
-          </button>
-        </div> */}
 
         <h2 className={`mb-4 text-center ${darkMode ? 'text-light' : 'text-dark'}`}>
           <i className="bi bi-speedometer2 me-2"></i>Dashboard Quản Lý Quán Ăn
