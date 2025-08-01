@@ -147,9 +147,9 @@ const FoodCategoryForm = ({ mode }) => {
         </div>
 
         {isDetail && (
-          <div className={`card mt-4 ${darkMode ? 'bg-secondary text-white' : 'bg-white text-dark'}`}>
-            <div className="card-body">
-              <h5>Danh sách món ăn trong danh mục</h5>
+          <div className="card mt-4 ">
+            <div className="card-body ">
+              <h5 className='text-dark'>Danh sách món ăn trong danh mục</h5>
 
               {selectedFoodIds.length > 0 && (
                 <div className="alert alert-info d-flex justify-content-between">

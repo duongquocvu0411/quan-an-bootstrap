@@ -222,7 +222,7 @@ const handleSubmit = async (e) => {
 
         <div className={`card shadow-sm ${darkMode ? 'bg-secondary text-white' : 'bg-white text-dark'}`}>
           <div className="card-body">
-            <h4 className="mb-4">
+            <h4 className="mb-4 text-dark">
               <i className="bi bi-cup-straw me-2"></i>
               {mode === 'add' && 'Thêm món ăn'}
               {mode === 'edit' && 'Chỉnh sửa món ăn'}
@@ -321,24 +321,39 @@ const handleSubmit = async (e) => {
                           />
 
                           {/* Nút xóa */}
-                          <button
-                            type="button"
-                            onClick={(e) => { e.stopPropagation(); handleRemoveAdditionalImage(i); }}
-                            className="btn btn-sm btn-danger position-absolute top-0 end-0 p-1"
-                            style={{ transform: 'translate(30%, -30%)', borderRadius: '50%' }}
-                          >
-                            <i className="bi bi-x-lg" style={{ fontSize: '0.7rem' }}></i>
-                          </button>
+                          {!isDetail && (
+                            <button
+                              type="button"
+                              onClick={(e) => { e.stopPropagation(); handleRemoveAdditionalImage(i); }}
+                              className="btn btn-sm btn-danger position-absolute top-0 end-0 p-1"
+                              style={{ transform: 'translate(30%, -30%)', borderRadius: '50%' }}
+                            >
+                              <i className="bi bi-x-lg" style={{ fontSize: '0.7rem' }}></i>
+                            </button>
+                          )}
 
                           {/* Nút chỉnh sửa (ẩn input file) */}
-                          <button
-                            type="button"
-                            className="btn btn-sm btn-light position-absolute bottom-0 start-50 translate-middle-x"
-                            style={{ borderRadius: '50%' }}
-                            onClick={() => document.getElementById(`replace-input-${i}`).click()}
-                          >
-                            <i className="bi bi-pencil-fill text-primary"></i>
-                          </button>
+                          {!isDetail && (
+                            <>
+                              <button
+                                type="button"
+                                className="btn btn-sm btn-light position-absolute bottom-0 start-50 translate-middle-x"
+                                style={{ borderRadius: '50%' }}
+                                onClick={() => document.getElementById(`replace-input-${i}`).click()}
+                              >
+                                <i className="bi bi-pencil-fill text-primary"></i>
+                              </button>
+
+                              {/* input file ẩn */}
+                              <input
+                                type="file"
+                                accept="image/*"
+                                id={`replace-input-${i}`}
+                                style={{ display: 'none' }}
+                                onChange={(e) => handleReplaceAdditionalImage(e, i)}
+                              />
+                            </>
+                          )}
 
                           {/* input file ẩn */}
                           <input

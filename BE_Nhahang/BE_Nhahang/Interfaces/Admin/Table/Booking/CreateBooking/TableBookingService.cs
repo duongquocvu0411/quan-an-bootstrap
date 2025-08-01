@@ -7,6 +7,7 @@ using BE_Nhahang.Helpers.TemplateEmail;
 using BE_Nhahang.Interfaces.Admin.AdminId;
 using BE_Nhahang.Interfaces.Admin.Log;
 using BE_Nhahang.Interfaces.Admin.Sendmail;
+using BE_Nhahang.Models;
 using BE_Nhahang.Models.Entities.Table;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -15,6 +16,7 @@ using static System.Net.WebRequestMethods;
 
 namespace BE_Nhahang.Interfaces.Admin.Table.Booking.CreateBooking
 {
+
     public class TableBookingService : ITableBookingService
     {
         private readonly DbConfig _db;
@@ -31,6 +33,39 @@ namespace BE_Nhahang.Interfaces.Admin.Table.Booking.CreateBooking
             _config = config;
             _systemLogService = systemLogService;
             _httpContextAccessorService = httpContextAccessorService;
+        }
+
+        public async Task<ResponseDTO<PagedResult<TableBookingModel>>> GetAllAsync(int page, int pageSize)
+        {
+            if (page <= 0) page = 1;
+            if (pageSize <= 0) pageSize = 10;
+
+            var query = _db.Set<TableBookingModel>()
+                           .AsNoTracking()       
+                           .OrderByDescending(x => x.BookingTime);
+
+            var totalCount = await query.CountAsync();
+
+            var results = await query.Skip((page - 1) * pageSize)
+                                     .Take(pageSize)
+                                     .ToListAsync();
+
+            var paged = new PagedResult<TableBookingModel>
+            {
+                CurrentPage = page,
+                PageSize = pageSize,
+                TotalCount = totalCount,
+                TotalPages = (int)Math.Ceiling(totalCount / (double)pageSize),
+                Results = results
+            };
+
+            return new ResponseDTO<PagedResult<TableBookingModel>>
+            {
+                IsSuccess = true,
+                code = 200,
+                Message = "Lấy danh sách booking thành công",
+                Data = paged
+            };
         }
 
 

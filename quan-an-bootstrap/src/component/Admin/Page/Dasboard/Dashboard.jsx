@@ -53,7 +53,7 @@ const Dashboard = () => {
         {/* Breadcrumb */}
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
-            <li className="breadcrumb-item"><a href="/">Trang chủ</a></li>
+            <li className="breadcrumb-item"><a href="/admin/dashboard">Trang chủ</a></li>
             <li className="breadcrumb-item active" aria-current="page">Dashboard</li>
           </ol>
         </nav>

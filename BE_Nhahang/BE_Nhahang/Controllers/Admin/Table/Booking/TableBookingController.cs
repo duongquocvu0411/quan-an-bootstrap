@@ -1,6 +1,8 @@
 ﻿using BE_Nhahang.DTOS.Admin.Tables.Booking;
 using BE_Nhahang.DTOS.Response;
 using BE_Nhahang.Interfaces.Admin.Table.Booking.CreateBooking;
+using BE_Nhahang.Models;
+using BE_Nhahang.Models.Entities.Table;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,6 +18,19 @@ namespace BE_Nhahang.Controllers.Admin.Table.Booking
         {
             _bookingService = bookingService;
         }
+
+        [HttpGet("list")]
+     
+        public async Task<ActionResult<ResponseDTO<PagedResult<TableBookingModel>>>> GetAll(
+       [FromQuery] int page = 1,
+       [FromQuery] int pageSize = 10)
+        {
+            var res = await _bookingService.GetAllAsync(page, pageSize);
+            return StatusCode(res.code, res); // trả đúng mã code trong ResponseDTO
+        }
+
+
+
 
         [HttpPost("look-up")]
         public async Task<ActionResult<ResponseDTO<object>>> Lookup(BookingLookupFilterDTO fullter)

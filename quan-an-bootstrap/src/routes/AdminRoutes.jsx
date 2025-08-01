@@ -12,7 +12,9 @@ import FoodForm from '../component/Admin/Form/FoodForm';
 
 import TableManagement from '../component/Admin/Page/TableManagement';
 import TableForm from '../component/Admin/Form/TableForm';
-import BookingDetail from '../component/Admin/Form/BookingDetail';
+import BookingDetail from '../component/Admin/Form/BookingDetailForm';
+import BookingTable from '../component/Admin/Page/BookingTable';
+
 
 
 const AdminRoutes = () => {
@@ -48,6 +50,9 @@ const AdminRoutes = () => {
         <Route path="tables/add" element={<TableForm mode="add" />} />
         <Route path="tables/edit/:id" element={<TableForm mode="edit" />} />
         <Route path="tables/detail/:id" element={<TableForm mode="detail" />} />
+
+        {/* booking */}
+        <Route path="bookings" element={<BookingTable />} />
         <Route path="bookings/detail/:id" element={<BookingDetail />} />
       </Route>
     </Routes></DarkModeProvider>

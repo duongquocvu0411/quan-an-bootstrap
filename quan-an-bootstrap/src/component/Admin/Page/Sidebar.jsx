@@ -41,7 +41,7 @@ const Sidebar = () => {
             { to: '/admin/dashboard', label: 'Trang chủ', icon: 'bi-house-door-fill' },
             { to: '/admin/food-categories', label: 'Category', icon: 'bi-egg-fried' },
             { to: '/admin/foods', label: 'Món ăn', icon: 'bi-cup-straw' },
-            { to: '/orders', label: 'Đơn hàng', icon: 'bi-file-earmark-spreadsheet' },
+            { to: '/admin/bookings', label: 'Đơn hàng', icon: 'bi-file-earmark-spreadsheet' },
             { to: '/admin/tables', label: 'Đặt bàn', icon: 'bi-calendar-check' },
           ].map((item) => (
             <li className="nav-item" key={item.to}>

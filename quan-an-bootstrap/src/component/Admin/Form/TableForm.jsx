@@ -194,9 +194,9 @@ const handleSubmit = async (e) => {
           ← Quay lại danh sách
         </button>
 
-        <div className={`card shadow-sm ${darkMode ? 'bg-secondary text-white' : 'bg-white text-dark'}`}>
+        <div className={`card shadow-sm  ${darkMode ? 'bg-secondary text-white' : 'bg-white text-dark'}`}>
           <div className="card-body">
-            <h4 className="mb-4">
+            <h4 className="mb-4 text-dark">
               <i className="bi bi-grid-3x3-gap me-2"></i>
               {mode === 'add' && 'Thêm bàn mới'}
               {mode === 'edit' && 'Chỉnh sửa bàn'}
@@ -312,7 +312,7 @@ const handleSubmit = async (e) => {
            {isDetail && (
   <div className="mt-5">
     <div className="d-flex justify-content-between align-items-center mb-3">
-      <h5 className="mb-0">
+      <h5 className="mb-0 text-dark">
         <i className="bi bi-clock-history me-2"></i>Lịch sử đặt bàn
       </h5>
       <button

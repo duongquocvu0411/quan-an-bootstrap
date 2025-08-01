@@ -241,6 +241,7 @@ namespace BE_Nhahang.Interfaces.Admin.Table
                 Booking = new
                 {
                     booking.Id,
+                    booking.BookingCode,
                     booking.TableId,
                     booking.CustomerName,
                     booking.CustomerEmail,
