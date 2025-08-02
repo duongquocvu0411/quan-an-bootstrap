@@ -8,6 +8,8 @@ import OrderModal from '../Modal/OrderModal';
 import { toast, ToastContainer } from 'react-toastify';
 import { updateBookingStatus } from '../../../be/Admin/Booking/Booking.api';
 import { DarkModeContext } from '../DarkModeContext';
+import { deleteMultipleOrders, updateTableOrdersStatus } from '../../../be/Admin/Booking/Order.api';
+import PaymentModal from '../Modal/PaymentModal';
 
 const BOOKING_STATUSES = ['Booked', 'CheckedIn', 'Completed', 'Cancelled'];
 const ORDER_STATUSES = ['Ordered', 'Cooking', 'Served', 'Canceled'];
@@ -37,7 +39,11 @@ const BookingDetail = () => {
 
   const [editingOrderId, setEditingOrderId] = useState(null);
   const [tempOrderStatus, setTempOrderStatus] = useState('');
-
+  const [isUpdatingOrderStatus, setIsUpdatingOrderStatus] = useState(false);
+  const [selectedOrders, setSelectedOrders] = useState([]);
+  const [deletingIds, setDeletingIds] = useState([]);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+ 
   const fetchBookingDetail = async (bookingId, page) => {
     try {
       const data = await getBookingDetailById(bookingId, page, orders.pageSize);
@@ -116,29 +122,110 @@ const cancelEditOrderStatus = () => {
   toast.info('Đã huỷ chỉnh sửa trạng thái món ăn');
 };
 
-const confirmEditOrderStatus = (orderId) => {
-  setOrders(prev => ({
-    ...prev,
-    results: prev.results.map(order =>
-      order.id === orderId ? { ...order, status: tempOrderStatus } : order
-    )
-  }));
-  setEditingOrderId(null);
-  setTempOrderStatus('');
-  toast.success(`Đã cập nhật trạng thái món #${orderId} thành: ${tempOrderStatus}`);
+const confirmEditOrderStatus = async (orderId) => {
+  if (isUpdatingOrderStatus) return;  // Tránh gọi nhiều lần khi đang cập nhật
+  setIsUpdatingOrderStatus(true);  // Đặt trạng thái đang cập nhật
+
+  try {
+    // Gọi hàm cập nhật trạng thái món ăn từ backend
+    const res = await updateTableOrdersStatus(orderId, tempOrderStatus);
+
+    // Nếu cập nhật thành công, cập nhật trạng thái trong local state
+    setOrders(prev => ({
+      ...prev,
+      results: prev.results.map(order =>
+        order.id === orderId ? { ...order, status: tempOrderStatus } : order
+      )
+    }));
+
+    // Reset trạng thái chỉnh sửa
+    setEditingOrderId(null);
+    setTempOrderStatus('');
+
+    // Thông báo thành công
+    toast.success(res.message || `Đã cập nhật trạng thái món #${orderId} thành: ${tempOrderStatus}`);
+  } catch (err) {
+    // Nếu có lỗi, thông báo lỗi
+    toast.error(err?.message || 'Cập nhật trạng thái món ăn thất bại');
+  } finally {
+    // Đặt trạng thái không còn đang cập nhật
+    setIsUpdatingOrderStatus(false);
+  }
 };
 
 
-const handleDeleteOrder = (orderId) => {
+
+
+const handleDeleteOrder = async (orderId) => {
   if (!window.confirm(`Bạn có chắc chắn muốn xoá món ăn #${orderId}?`)) return;
 
-  setOrders(prev => ({
-    ...prev,
-    results: prev.results.filter(order => order.id !== orderId),
-    totalCount: prev.totalCount - 1
-  }));
+  try {
+    setDeletingIds(prev => [...prev, orderId]);
 
-  toast.success(`Đã xoá món ăn #${orderId} khỏi danh sách`);
+    const res = await deleteMultipleOrders([orderId]); // { orderIds: [id] }
+
+    if (res?.isSuccess) {
+      setOrders(prev => ({
+        ...prev,
+        results: prev.results.filter(order => order.id !== orderId),
+        totalCount: Math.max(0, (prev.totalCount || 0) - 1),
+      }));
+      // DÙNG message từ backend (vd: "Đã xoá: 0. Bị bỏ qua: [9] (Served...)")
+      toast.success(res.message || `Đã xoá món ăn #${orderId}`);
+    } else {
+      toast.error(res?.message || 'Xoá món ăn thất bại');
+    }
+  } catch (err) {
+    const msg = err?.message || 'Có lỗi xảy ra khi xoá món ăn';
+    toast.error(msg);
+  } finally {
+    setDeletingIds(prev => prev.filter(id => id !== orderId));
+  }
+};
+
+
+
+const handleSelectAll = () => {
+    const allOrderIds = orders.results.map(order => order.id);
+    const allSelected = allOrderIds.every(id => selectedOrders.includes(id));
+    setSelectedOrders(allSelected ? [] : allOrderIds);
+  };
+
+  const handleSelectOrder = (id) => {
+    setSelectedOrders(prev => (
+      prev.includes(id)
+        ? prev.filter(orderId => orderId !== id)
+        : [...prev, id]
+    ));
+  };
+
+const handleDeleteSelected = async () => {
+  if (selectedOrders.length === 0) {
+    toast.info('Vui lòng chọn ít nhất một món ăn để xoá.');
+    return;
+  }
+
+  if (!window.confirm(`Bạn có chắc chắn muốn xoá ${selectedOrders.length} món ăn đã chọn?`)) return;
+
+  try {
+    const res = await deleteMultipleOrders(selectedOrders); // { orderIds: [...] }
+
+    if (res?.isSuccess) {
+      setOrders(prev => ({
+        ...prev,
+        results: prev.results.filter(order => !selectedOrders.includes(order.id)),
+        totalCount: Math.max(0, (prev.totalCount || 0) - selectedOrders.length),
+      }));
+      setSelectedOrders([]);
+      // DÙNG message từ backend (vd: "Yêu cầu: 3. Đã xoá: 2. Bị bỏ qua: [9] ...")
+      toast.success(res.message || 'Đã xoá các món ăn đã chọn');
+    } else {
+      toast.error(res?.message || 'Xoá thất bại');
+    }
+  } catch (error) {
+    const msg = error?.message || 'Có lỗi xảy ra khi xoá các món ăn đã chọn';
+    toast.error(msg);
+  }
 };
 
 
@@ -191,11 +278,17 @@ const handleDeleteOrder = (orderId) => {
       booked: 'badge bg-info text-dark',
       checkedin: 'badge bg-primary',
       completed: 'badge bg-success',
-      cancelled: 'badge bg-danger'
+      cancelled: 'badge bg-danger',
+       ordered: 'badge bg-warning text-dark',  // Đặt món (màu vàng)
+      cooking: 'badge bg-info text-white',    // Đang chế biến (màu xanh dương)
+     served: 'badge bg-success text-white',  // Đã phục vụ (màu xanh lá cây)
     };
     const cls = map[s] || 'badge bg-secondary';
     return <span className={cls}>{status}</span>;
   };
+
+  const isServed = (s) => String(s || '').trim().toLowerCase() === 'served';
+
 
   return (
     <div className="d-flex">
@@ -212,6 +305,7 @@ const handleDeleteOrder = (orderId) => {
             + Gọi món
           </button>
         )}
+        
 
         <div className="card">
           <div className="card-body">
@@ -287,74 +381,113 @@ const handleDeleteOrder = (orderId) => {
             <h5 className="mt-4 text-dark">
               <i className="bi bi-list-ul me-2"></i>Đơn gọi món
             </h5>
+             {selectedOrders.length > 0 && (
+          <div className="alert alert-info d-flex justify-content-between align-items-center">
+            <span>Đã chọn {selectedOrders.length} món ăn</span>
+            <button className="btn btn-danger btn-sm" onClick={handleDeleteSelected}>
+              Xoá các món đã chọn
+            </button>
+          </div>
+        )}
             <table className="table table-bordered">
               <thead className="table-light">
                 <tr>
+                    <th>
+                    <input
+                      type="checkbox"
+                      checked={orders.results.length > 0 && orders.results.every((order) => selectedOrders.includes(order.id))}
+                      onChange={handleSelectAll}
+                    />
+                  </th>
                   <th>#</th>
                   <th>Tên món</th>
                   <th>Số lượng</th>
                   <th>Giá (VND)</th>
                   <th>Trạng thái</th>
+                  <th>Ghi chú</th>
                   <th>Hành động</th>
                 </tr>
               </thead>
              <tbody>
-  {orders.results.map((o, i) => (
-    <tr key={o.id}>
-      <td>{(orders.currentPage - 1) * orders.pageSize + i + 1}</td>
-      <td>{o.foodName}</td>
-      <td>{o.quantity}</td>
-      <td>{o.priceAtOrder.toLocaleString()}</td>
-      <td>
-        {editingOrderId === o.id ? (
-          <div className="d-flex align-items-center gap-2">
-            <select
-              className="form-select form-select-sm"
-              value={tempOrderStatus}
-              onChange={(e) => setTempOrderStatus(e.target.value)}
-            >
-              {ORDER_STATUSES.map(status => (
-                <option key={status} value={status}>{status}</option>
+              {orders.results.map((o, i) => (
+                <tr key={o.id}>
+                  <td>
+                      <input
+                        type="checkbox"
+                        checked={selectedOrders.includes(o.id)}
+                        onChange={() => handleSelectOrder(o.id)}
+                      />
+                    </td>
+                  <td>{(orders.currentPage - 1) * orders.pageSize + i + 1}</td>
+                  <td>{o.foodName}</td>
+                  <td>{o.quantity}</td>
+                  <td>{o.priceAtOrder.toLocaleString()}</td>
+                  <td>
+                    {editingOrderId === o.id ? (
+                      <div className="d-flex align-items-center gap-2">
+                        <select
+                          className="form-select form-select-sm"
+                          value={tempOrderStatus}
+                          onChange={(e) => setTempOrderStatus(e.target.value)}
+                        >
+                          {ORDER_STATUSES.map(status => (
+                            <option key={status} value={status}>{status}</option>
+                          ))}
+                        </select>
+                        {/* Chỉ hiển thị nút nếu trạng thái cho phép */}
+                        {!(booking.status === 'Completed' || booking.status === 'Cancelled') && (
+                          <>
+                            <button className="btn btn-sm btn-primary" onClick={() => confirmEditOrderStatus(o.id)}>
+                              <i className="bi bi-check2"></i>
+                            </button>
+                            <button className="btn btn-sm btn-secondary" onClick={cancelEditOrderStatus}>
+                              <i className="bi bi-x"></i>
+                            </button>
+                          </>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="d-flex align-items-center gap-2">
+                        <span>   {renderStatusBadge(o.status)}</span>
+                        {!(booking.status === 'Completed' || booking.status === 'Cancelled') && (
+                          <button
+                            className="btn btn-sm btn-outline-secondary"
+                            onClick={() => startEditOrderStatus(o.id, o.status)}
+                          >
+                            <i className="bi bi-pencil-square"></i>
+                          </button>
+                        )}
+                      </div>
+                    )}
+                  </td>
+                  <td>{o.note}</td>
+                <td>
+                {!(
+                    booking.status === 'Completed' ||
+                    booking.status === 'Cancelled' ||
+                    isServed(o.status)
+                  ) && (
+                    <button
+                      className="btn btn-sm btn-danger"
+                      onClick={() => handleDeleteOrder(o.id)}
+                    >
+                      <i className="bi bi-trash"></i>
+                    </button>
+                )}
+              </td>
+                </tr>
               ))}
-            </select>
-            {/* Chỉ hiển thị nút nếu trạng thái cho phép */}
-            {!(booking.status === 'Completed' || booking.status === 'Cancelled') && (
-              <>
-                <button className="btn btn-sm btn-primary" onClick={() => confirmEditOrderStatus(o.id)}>
-                  <i className="bi bi-check2"></i>
-                </button>
-                <button className="btn btn-sm btn-secondary" onClick={cancelEditOrderStatus}>
-                  <i className="bi bi-x"></i>
-                </button>
-              </>
-            )}
-          </div>
-        ) : (
-          <div className="d-flex align-items-center gap-2">
-            <span>{o.status}</span>
-            {!(booking.status === 'Completed' || booking.status === 'Cancelled') && (
-              <button
-                className="btn btn-sm btn-outline-secondary"
-                onClick={() => startEditOrderStatus(o.id, o.status)}
-              >
-                <i className="bi bi-pencil-square"></i>
-              </button>
-            )}
-          </div>
-        )}
-      </td>
-      <td>
-        {!(booking.status === 'Completed' || booking.status === 'Cancelled') && (
-          <button className="btn btn-sm btn-danger" onClick={() => handleDeleteOrder(o.id)}>
-            <i className="bi bi-trash"></i>
-          </button>
-        )}
-      </td>
-    </tr>
-  ))}
-</tbody>
+
+              </tbody>
 
             </table>
+            {(booking.status === 'Booked' || booking.status === 'CheckedIn') && (
+                <div className="text-end mt-3">
+                  <button className="btn btn-warning" onClick={() => setShowPaymentModal(true)}>
+                    <i className="bi bi-credit-card me-2"></i> Thanh toán
+                  </button>
+                </div>
+              )}
 
             {orders.totalPages > 1 && (
               <ReactPaginate
@@ -383,7 +516,13 @@ const handleDeleteOrder = (orderId) => {
           onSave={handleSaveOrder}
           bookingId={Number(id)}
         />
-      </div>
+
+        <PaymentModal
+      show={showPaymentModal}
+      onHide={() => setShowPaymentModal(false)}
+      bookingId={Number(id)}
+    />
+          </div>
       <ToastContainer/>
     </div>
   );

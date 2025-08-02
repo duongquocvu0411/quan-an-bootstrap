@@ -1,4 +1,5 @@
 ﻿using BE_Nhahang.Models.Entities;
+using BE_Nhahang.Models.Entities.Payment;
 using BE_Nhahang.Models.Entities.Table;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -26,7 +27,7 @@ namespace BE_Nhahang.Config
         public DbSet<TableBookingModel> TableBookings { get; set; }
         public DbSet<TableOrderModel> TableOrders { get; set; }
 
-
+        public DbSet<PaymentQrModel> PaymentQr { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -83,6 +84,36 @@ namespace BE_Nhahang.Config
                 .Property(o => o.TotalPrice)
                 .HasPrecision(18, 2);
 
+            builder.Entity<PaymentQrModel>(qr =>
+            {
+                qr.ToTable("PaymentQrs");
+
+                qr.HasKey(x => x.Id);
+
+                qr.Property(x => x.Amount)
+                  .HasColumnType("decimal(18,2)")
+                  .IsRequired();
+
+                qr.Property(x => x.Note)
+                  .HasMaxLength(256);
+
+                qr.Property(x => x.QrImageUrl)
+                  .HasMaxLength(512)
+                  .IsRequired();
+
+                qr.Property(x => x.CreatedBy)
+                  .HasMaxLength(64);
+
+                qr.Property(x => x.CreatedAt)
+                  .HasColumnType("datetime2");
+
+                qr.HasOne(x => x.Booking)
+                  .WithMany() // hoặc .WithMany(b => b.PaymentQrs) nếu bạn có collection
+                  .HasForeignKey(x => x.BookingId)
+                  .OnDelete(DeleteBehavior.Cascade);
+
+                qr.HasIndex(x => x.BookingId);
+            });
 
         }
     }

@@ -165,6 +165,44 @@ namespace BE_Nhahang.Migrations
                     b.ToTable("Foods");
                 });
 
+            modelBuilder.Entity("BE_Nhahang.Models.Entities.Payment.PaymentQrModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("BookingId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<string>("Note")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("QrImageUrl")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("nvarchar(512)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookingId");
+
+                    b.ToTable("PaymentQrs", (string)null);
+                });
+
             modelBuilder.Entity("BE_Nhahang.Models.Entities.SystemLogModel", b =>
                 {
                     b.Property<int>("Id")
@@ -634,6 +672,17 @@ namespace BE_Nhahang.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("BE_Nhahang.Models.Entities.Payment.PaymentQrModel", b =>
+                {
+                    b.HasOne("BE_Nhahang.Models.Entities.Table.TableBookingModel", "Booking")
+                        .WithMany()
+                        .HasForeignKey("BookingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Booking");
                 });
 
             modelBuilder.Entity("BE_Nhahang.Models.Entities.Table.TableBookingModel", b =>

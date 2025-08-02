@@ -110,5 +110,110 @@ namespace BE_Nhahang.Interfaces.Admin.Table.Booking.Order
             }
         }
 
+
+
+        public async Task<ResponseDTO<object>> UpdateOrderStatusAsync(UpdateTableOrderStatusDTO dto)
+        {
+            var order = await _context.TableOrders.FindAsync(dto.Id);
+            if (order == null)
+            {
+                return new ResponseDTO<object>
+                {
+                    IsSuccess = false,
+                    code = 404,
+                    Message = "Order not found."
+                };
+            }
+
+            order.Status = dto.Status;  // Cập nhật trạng thái món ăn
+            order.UpdatedAt = DateTime.UtcNow;
+            order.UpdatedBy = _httpContextAccessorService.GetAdminId();
+            _context.TableOrders.Update(order);
+            await _context.SaveChangesAsync();
+
+            return new ResponseDTO<object>
+            {
+                IsSuccess = true,
+                code = 200,
+                Message = "Order status updated successfully.",
+                Data = order.Status
+            };
+        }
+
+
+        public async Task<ResponseDTO<string>> DeleteMultipleOrdersAsync(DeleteOrdersDTO dto)
+        {
+            if (dto?.OrderIds == null || dto.OrderIds.Count == 0)
+            {
+                return new ResponseDTO<string>
+                {
+                    IsSuccess = false,
+                    code = 400,
+                    Message = "Không có đơn hàng nào được chọn để xóa"
+                };
+            }
+
+            var requestedIds = dto.OrderIds.Distinct().ToHashSet();
+
+            // Lấy mỏng: chỉ Id, Status để quyết định xoá (nhanh hơn)
+            var found = await _context.TableOrders
+                .AsNoTracking()
+                .Where(o => requestedIds.Contains(o.Id))
+                .Select(o => new { o.Id, o.Status })
+                .ToListAsync();
+
+            if (found.Count == 0)
+            {
+                return new ResponseDTO<string>
+                {
+                    IsSuccess = false,
+                    code = 404,
+                    Message = "Không tìm thấy đơn hàng nào để xóa"
+                };
+            }
+
+            static bool IsServed(string? s) =>
+                string.Equals(s?.Trim(), "Served", StringComparison.OrdinalIgnoreCase);
+
+            var servedIds = found.Where(x => IsServed(x.Status)).Select(x => x.Id).ToList();
+            var deletableIds = found.Where(x => !IsServed(x.Status)).Select(x => x.Id).ToList();
+            var notFoundIds = requestedIds.Except(found.Select(x => x.Id)).ToList();
+
+            if (deletableIds.Count == 0)
+            {
+                var msgNone =
+                    $"Không xoá được đơn hàng nào. Đã yêu cầu: {requestedIds.Count}. " +
+                    (servedIds.Count > 0 ? $"Bị chặn (Served): [{string.Join(", ", servedIds)}]. " : "") +
+                    (notFoundIds.Count > 0 ? $"Không tồn tại: [{string.Join(", ", notFoundIds)}]." : "");
+
+                return new ResponseDTO<string>
+                {
+                    IsSuccess = false,
+                    code = 409,
+                    Message = msgNone
+                };
+            }
+
+            // EF Core 8: bulk delete trực tiếp tại DB (nhanh, không load entity)
+            var affected = await _context.TableOrders
+                .Where(o => deletableIds.Contains(o.Id))
+                .ExecuteDeleteAsync();
+
+            var skipped = servedIds.Concat(notFoundIds).ToList();
+
+            var msg =
+                $"Yêu cầu: {requestedIds.Count}. Đã xoá: {affected}. " +
+                (skipped.Count > 0
+                    ? $"Bị bỏ qua: [{string.Join(", ", skipped)}] (Served hoặc không tồn tại)."
+                    : "Không có bản ghi bị bỏ qua.");
+
+            return new ResponseDTO<string>
+            {
+                IsSuccess = true,
+                code = 200,
+                Message = msg
+            };
+        }
+
     }
 }

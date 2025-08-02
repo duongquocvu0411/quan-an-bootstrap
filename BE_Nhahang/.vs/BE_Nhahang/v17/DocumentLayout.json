@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\controllers\\admin\\table\\booking\\tablebookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\controllers\\admin\\table\\booking\\tablebookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\interfaces\\admin\\payment\\paymentqrservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\interfaces\\admin\\payment\\paymentqrservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\models\\entities\\table\\tablemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\models\\entities\\table\\tablemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\extensions\\servicecollectionextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\extensions\\servicecollectionextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\models\\options\\qroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\models\\options\\qroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\interfaces\\admin\\payment\\ipaymentqrservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\interfaces\\admin\\payment\\ipaymentqrservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\dtos\\admin\\payment\\createbookingpaymentqrrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\dtos\\admin\\payment\\createbookingpaymentqrrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\models\\entities\\payment\\paymentqrmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\models\\entities\\payment\\paymentqrmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,31 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TableModel.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Models\\Entities\\Table\\TableModel.cs",
-              "RelativeDocumentMoniker": "BE_Nhahang\\Models\\Entities\\Table\\TableModel.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Models\\Entities\\Table\\TableModel.cs",
-              "RelativeToolTip": "BE_Nhahang\\Models\\Entities\\Table\\TableModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABaAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ServiceCollectionExtension.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
+              "RelativeToolTip": "BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACgAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T17:22:54.624Z"
+              "WhenOpened": "2025-08-02T16:43:42.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Program.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Program.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Program.cs",
+              "RelativeToolTip": "BE_Nhahang\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAiwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-02T16:40:45.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "QrOptions.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Models\\Options\\QrOptions.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Models\\Options\\QrOptions.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Models\\Options\\QrOptions.cs",
+              "RelativeToolTip": "BE_Nhahang\\Models\\Options\\QrOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-02T16:37:49.556Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TableBookingController.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Controllers\\Admin\\Table\\Booking\\TableBookingController.cs",
-              "RelativeDocumentMoniker": "BE_Nhahang\\Controllers\\Admin\\Table\\Booking\\TableBookingController.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Controllers\\Admin\\Table\\Booking\\TableBookingController.cs",
-              "RelativeToolTip": "BE_Nhahang\\Controllers\\Admin\\Table\\Booking\\TableBookingController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwDQAAABAAAAAAAAAAA==",
+              "Title": "PaymentQrService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\PaymentQrService.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Interfaces\\Admin\\Payment\\PaymentQrService.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\PaymentQrService.cs",
+              "RelativeToolTip": "BE_Nhahang\\Interfaces\\Admin\\Payment\\PaymentQrService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAADgv3MAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T17:21:06.037Z",
+              "WhenOpened": "2025-08-02T16:36:43.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IPaymentQrService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\IPaymentQrService.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Interfaces\\Admin\\Payment\\IPaymentQrService.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\IPaymentQrService.cs",
+              "RelativeToolTip": "BE_Nhahang\\Interfaces\\Admin\\Payment\\IPaymentQrService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-02T16:36:17.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateBookingPaymentQrRequest.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\DTOS\\Admin\\Payment\\CreateBookingPaymentQrRequest.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\DTOS\\Admin\\Payment\\CreateBookingPaymentQrRequest.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\DTOS\\Admin\\Payment\\CreateBookingPaymentQrRequest.cs",
+              "RelativeToolTip": "BE_Nhahang\\DTOS\\Admin\\Payment\\CreateBookingPaymentQrRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-02T16:35:33.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PaymentQrModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Models\\Entities\\Payment\\PaymentQrModel.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Models\\Entities\\Payment\\PaymentQrModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Models\\Entities\\Payment\\PaymentQrModel.cs",
+              "RelativeToolTip": "BE_Nhahang\\Models\\Entities\\Payment\\PaymentQrModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-02T16:22:20.988Z",
               "EditorCaption": ""
             }
           ]

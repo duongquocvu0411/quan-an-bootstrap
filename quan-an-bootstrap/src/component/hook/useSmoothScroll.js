@@ -1,4 +1,4 @@
-// ✅ Hook scroll mượt
+//  Hook scroll mượt
 import { useCallback } from "react";
 
 export const useSmoothScroll = () => {

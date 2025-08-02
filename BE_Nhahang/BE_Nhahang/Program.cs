@@ -1,8 +1,11 @@
 ﻿using BE_Nhahang.Config;
 using BE_Nhahang.Extensions;
+using BE_Nhahang.Models.Options;
+using BE_Nhahang.Test.Option;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -19,6 +22,9 @@ namespace BE_Nhahang
             // 1. DbContext
             builder.Services.AddDbContext<DbConfig>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.Configure<VietQrOptions>(builder.Configuration.GetSection("Payment:VietQr"));
+            builder.Services.Configure<QrOptions>(builder.Configuration.GetSection("Payment:VietQr"));
 
             // 2. Identity
             builder.Services.AddIdentity<IdentityUser, IdentityRole>()

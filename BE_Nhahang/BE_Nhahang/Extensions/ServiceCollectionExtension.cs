@@ -5,6 +5,7 @@ using BE_Nhahang.Interfaces.Admin.Auth.Account;
 using BE_Nhahang.Interfaces.Admin.Food;
 using BE_Nhahang.Interfaces.Admin.FoodCategory;
 using BE_Nhahang.Interfaces.Admin.Log;
+using BE_Nhahang.Interfaces.Admin.Payment;
 using BE_Nhahang.Interfaces.Admin.Sendmail;
 using BE_Nhahang.Interfaces.Admin.Table;
 using BE_Nhahang.Interfaces.Admin.Table.Booking;
@@ -19,6 +20,7 @@ using BE_Nhahang.Services.Cloudinary;
 using BE_Nhahang.Services.IImageSave;
 using BE_Nhahang.Services.ImageSave;
 using BE_Nhahang.Services.Jwt;
+using BE_Nhahang.Test.Inteface;
 namespace BE_Nhahang.Extensions
 {
     public static class ServiceCollectionExtensions
@@ -36,6 +38,8 @@ namespace BE_Nhahang.Extensions
             services.AddScoped<ITableSuggestionService, TableSuggestionService>();
             services.AddScoped<ITableBookingService, TableBookingService>();
             services.AddScoped<ITableOrderService, TableOrderService>();
+            services.AddScoped<IVietQrService, VietQrService>();
+            services.AddScoped<IPaymentQrService, PaymentQrService>();
 
             // thêm các service khác ở đây
             services.AddScoped<IHttpContextAccessorService, HttpContextAccessorService>();
