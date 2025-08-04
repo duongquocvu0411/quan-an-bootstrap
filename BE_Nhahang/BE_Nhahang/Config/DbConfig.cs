@@ -28,6 +28,7 @@ namespace BE_Nhahang.Config
         public DbSet<TableOrderModel> TableOrders { get; set; }
 
         public DbSet<PaymentQrModel> PaymentQr { get; set; }
+        public DbSet<PaymentQrBankAccountModel> PaymentQrBankAccounts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

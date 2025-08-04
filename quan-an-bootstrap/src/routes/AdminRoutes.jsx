@@ -14,6 +14,8 @@ import TableManagement from '../component/Admin/Page/TableManagement';
 import TableForm from '../component/Admin/Form/TableForm';
 import BookingDetail from '../component/Admin/Form/BookingDetailForm';
 import BookingTable from '../component/Admin/Page/BookingTable';
+import BankAccountTable from '../component/Admin/Page/BankAccountTable';
+import BankAccountForm from '../component/Admin/Form/BankAccountForm';
 
 
 
@@ -54,6 +56,13 @@ const AdminRoutes = () => {
         {/* booking */}
         <Route path="bookings" element={<BookingTable />} />
         <Route path="bookings/detail/:id" element={<BookingDetail />} />
+
+        {/* Bankking */}
+        <Route path="/bank-accounts" element={<BankAccountTable />} />
+        <Route path="/bank-accounts/add" element={<BankAccountForm mode="add" />} />
+        <Route path="/bank-accounts/edit/:id" element={<BankAccountForm mode="edit" />} />
+        <Route path="/bank-accounts/detail/:id" element={<BankAccountForm mode="detail" />} />
+
       </Route>
     </Routes></DarkModeProvider>
   );

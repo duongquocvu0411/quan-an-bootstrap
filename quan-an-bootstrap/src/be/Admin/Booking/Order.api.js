@@ -74,11 +74,11 @@ export const deleteMultipleOrders = async (orderIds) => {
 
 // tạo qr 
 
-export const createPaymentQrForBooking = async (bookingId) => {
+export const createPaymentQrForBooking = async (bookingId, bankAccountId) => {
     try {
         const response = await axios.post(
-            `${API_URL}/payment-qr/create-for-booking/${bookingId}`,
-            {}, // body rỗng
+            `${API_URL}/payment-qr/create-for-booking/${bookingId}?bankId=${bankAccountId}`,
+            {}, // Body rỗng
             {
                 headers: {
                     ...getAuthHeader(),

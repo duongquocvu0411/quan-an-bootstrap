@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\interfaces\\admin\\payment\\settings\\paymentqrbankaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\interfaces\\admin\\payment\\settings\\paymentqrbankaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\controllers\\admin\\pyment\\paymentqrbankaccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\controllers\\admin\\pyment\\paymentqrbankaccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\interfaces\\admin\\payment\\settings\\ipaymentqrbankaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\interfaces\\admin\\payment\\settings\\ipaymentqrbankaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\dtos\\admin\\payment\\paymentqrbankaccountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\dtos\\admin\\payment\\paymentqrbankaccountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\interfaces\\admin\\payment\\paymentqrservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\interfaces\\admin\\payment\\paymentqrservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\extensions\\servicecollectionextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\extensions\\servicecollectionextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\models\\options\\qroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\models\\options\\qroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\interfaces\\admin\\payment\\ipaymentqrservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\interfaces\\admin\\payment\\ipaymentqrservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\dtos\\admin\\payment\\createbookingpaymentqrrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\dtos\\admin\\payment\\createbookingpaymentqrrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\models\\entities\\payment\\paymentqrmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\models\\entities\\payment\\paymentqrmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|c:\\users\\dell\\onedrive\\desktop\\quan-an-bootstrap\\be_nhahang\\be_nhahang\\extensions\\servicecollectionextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3D26CE6-291E-4B3F-9C0F-4B978F83F470}|BE_Nhahang\\BE_Nhahang.csproj|solutionrelative:be_nhahang\\extensions\\servicecollectionextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ServiceCollectionExtension.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
-              "RelativeDocumentMoniker": "BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
-              "RelativeToolTip": "BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACgAAAA8AAAAAAAAAA==",
+              "Title": "PaymentQrBankAccountController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Controllers\\Admin\\Pyment\\PaymentQrBankAccountController.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Controllers\\Admin\\Pyment\\PaymentQrBankAccountController.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Controllers\\Admin\\Pyment\\PaymentQrBankAccountController.cs*",
+              "RelativeToolTip": "BE_Nhahang\\Controllers\\Admin\\Pyment\\PaymentQrBankAccountController.cs*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T16:43:42.286Z",
+              "WhenOpened": "2025-08-04T10:27:01.706Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Program.cs",
-              "RelativeDocumentMoniker": "BE_Nhahang\\Program.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Program.cs",
-              "RelativeToolTip": "BE_Nhahang\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAiwBQAAAAAAAAAAAAAAA==",
+              "Title": "IPaymentQrBankAccountService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\Settings\\IPaymentQrBankAccountService.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Interfaces\\Admin\\Payment\\Settings\\IPaymentQrBankAccountService.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\Settings\\IPaymentQrBankAccountService.cs",
+              "RelativeToolTip": "BE_Nhahang\\Interfaces\\Admin\\Payment\\Settings\\IPaymentQrBankAccountService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T16:40:45.121Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "QrOptions.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Models\\Options\\QrOptions.cs",
-              "RelativeDocumentMoniker": "BE_Nhahang\\Models\\Options\\QrOptions.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Models\\Options\\QrOptions.cs",
-              "RelativeToolTip": "BE_Nhahang\\Models\\Options\\QrOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T16:37:49.556Z",
+              "WhenOpened": "2025-08-04T10:25:51.964Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PaymentQrService.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\PaymentQrService.cs",
-              "RelativeDocumentMoniker": "BE_Nhahang\\Interfaces\\Admin\\Payment\\PaymentQrService.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\PaymentQrService.cs",
-              "RelativeToolTip": "BE_Nhahang\\Interfaces\\Admin\\Payment\\PaymentQrService.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAArwCgAAAAfAAAAAAAAAA==",
+              "Title": "PaymentQrBankAccountService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\Settings\\PaymentQrBankAccountService.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Interfaces\\Admin\\Payment\\Settings\\PaymentQrBankAccountService.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\Settings\\PaymentQrBankAccountService.cs",
+              "RelativeToolTip": "BE_Nhahang\\Interfaces\\Admin\\Payment\\Settings\\PaymentQrBankAccountService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAwwBwAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T16:36:43.81Z",
+              "WhenOpened": "2025-08-04T10:25:52.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PaymentQrBankAccountDTO.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\DTOS\\Admin\\Payment\\PaymentQrBankAccountDTO.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\DTOS\\Admin\\Payment\\PaymentQrBankAccountDTO.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\DTOS\\Admin\\Payment\\PaymentQrBankAccountDTO.cs",
+              "RelativeToolTip": "BE_Nhahang\\DTOS\\Admin\\Payment\\PaymentQrBankAccountDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T10:51:55.89Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "IPaymentQrService.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\IPaymentQrService.cs",
-              "RelativeDocumentMoniker": "BE_Nhahang\\Interfaces\\Admin\\Payment\\IPaymentQrService.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\IPaymentQrService.cs",
-              "RelativeToolTip": "BE_Nhahang\\Interfaces\\Admin\\Payment\\IPaymentQrService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABWAAAAAAAAAA==",
+              "Title": "PaymentQrService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\PaymentQrService.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Interfaces\\Admin\\Payment\\PaymentQrService.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\PaymentQrService.cs",
+              "RelativeToolTip": "BE_Nhahang\\Interfaces\\Admin\\Payment\\PaymentQrService.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAqwAQBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T16:36:17.727Z",
+              "WhenOpened": "2025-08-04T10:15:51.838Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "CreateBookingPaymentQrRequest.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\DTOS\\Admin\\Payment\\CreateBookingPaymentQrRequest.cs",
-              "RelativeDocumentMoniker": "BE_Nhahang\\DTOS\\Admin\\Payment\\CreateBookingPaymentQrRequest.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\DTOS\\Admin\\Payment\\CreateBookingPaymentQrRequest.cs",
-              "RelativeToolTip": "BE_Nhahang\\DTOS\\Admin\\Payment\\CreateBookingPaymentQrRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Title": "IPaymentQrService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\IPaymentQrService.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Interfaces\\Admin\\Payment\\IPaymentQrService.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Interfaces\\Admin\\Payment\\IPaymentQrService.cs",
+              "RelativeToolTip": "BE_Nhahang\\Interfaces\\Admin\\Payment\\IPaymentQrService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T16:35:33.798Z",
+              "WhenOpened": "2025-08-04T10:15:45.192Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "PaymentQrModel.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Models\\Entities\\Payment\\PaymentQrModel.cs",
-              "RelativeDocumentMoniker": "BE_Nhahang\\Models\\Entities\\Payment\\PaymentQrModel.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Models\\Entities\\Payment\\PaymentQrModel.cs",
-              "RelativeToolTip": "BE_Nhahang\\Models\\Entities\\Payment\\PaymentQrModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAuAAAAAAAAAA==",
+              "Title": "ServiceCollectionExtension.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
+              "RelativeDocumentMoniker": "BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\quan-an-bootstrap\\BE_Nhahang\\BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
+              "RelativeToolTip": "BE_Nhahang\\Extensions\\ServiceCollectionExtension.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAAC8AAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T16:22:20.988Z",
+              "WhenOpened": "2025-08-04T10:13:11.382Z",
               "EditorCaption": ""
             }
           ]

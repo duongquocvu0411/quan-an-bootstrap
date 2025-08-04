@@ -1,9 +1,9 @@
 // src/components/Sidebar.jsx
 import React, { useState, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import Cookies from 'js-cookie'; // Nhớ import để lấy role từ cookie
 import '../css/Sidebar.css';
 import { DarkModeContext } from '../DarkModeContext';
-
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -14,9 +14,29 @@ const Sidebar = () => {
     setIsOpen(!isOpen);
   };
 
+  const role = Cookies.get('roles');
+
+  // Tạo danh sách menu
+  const menuItems = [
+    { to: '/admin/dashboard', label: 'Trang chủ', icon: 'bi-house-door-fill' },
+    { to: '/admin/food-categories', label: 'Category', icon: 'bi-egg-fried' },
+    { to: '/admin/foods', label: 'Món ăn', icon: 'bi-cup-straw' },
+    { to: '/admin/bookings', label: 'Đơn hàng', icon: 'bi-file-earmark-spreadsheet' },
+    { to: '/admin/tables', label: 'Đặt bàn', icon: 'bi-calendar-check' },
+  ];
+
+  // Nếu là Admin, thêm mục cấu hình tài khoản thanh toán
+  if (role === 'Admin') {
+    menuItems.push({
+      to: '/admin/bank-accounts',
+      label: 'Cấu hình tài khoản thanh toán',
+      icon: 'bi-bank',
+    });
+  }
+
   return (
     <>
-      {/* Toggle Button */}
+      {/* Nút Toggle */}
       <button
         className="btn btn-dark position-fixed top-50 start-0 translate-middle-y toggle-sidebar-btn rounded-end"
         onClick={toggleSidebar}
@@ -30,20 +50,14 @@ const Sidebar = () => {
         className={`custom-sidebar shadow-lg ${darkMode ? 'sidebar-dark bg-dark text-light' : 'sidebar-light bg-white text-dark'} ${isOpen ? 'open' : 'closed'}`}
       >
         <div className="sidebar-header text-center py-4 border-bottom border-secondary">
-          <h5 className={`mb-0 ${darkMode ? 'sidebar-dark bg-dark text-light' : 'sidebar-light bg-white text-dark'} `}>
+          <h5 className={`mb-0 ${darkMode ? 'text-light' : 'text-dark'}`}>
             <i className="bi bi-shop me-2"></i>
             {isOpen && 'Quản lý Quán Ăn'}
           </h5>
         </div>
 
         <ul className="nav flex-column mt-3">
-          {[
-            { to: '/admin/dashboard', label: 'Trang chủ', icon: 'bi-house-door-fill' },
-            { to: '/admin/food-categories', label: 'Category', icon: 'bi-egg-fried' },
-            { to: '/admin/foods', label: 'Món ăn', icon: 'bi-cup-straw' },
-            { to: '/admin/bookings', label: 'Đơn hàng', icon: 'bi-file-earmark-spreadsheet' },
-            { to: '/admin/tables', label: 'Đặt bàn', icon: 'bi-calendar-check' },
-          ].map((item) => (
+          {menuItems.map((item) => (
             <li className="nav-item" key={item.to}>
               <Link
                 to={item.to}
@@ -58,7 +72,7 @@ const Sidebar = () => {
             </li>
           ))}
 
-          {/* Toggle Dark Mode inside sidebar menu */}
+          {/* Nút chuyển chế độ sáng/tối */}
           <li className="nav-item px-3 mt-3">
             <button
               className={`btn w-100 d-flex align-items-center justify-content-start rounded shadow-sm ${darkMode ? 'btn-warning text-dark' : 'btn-outline-dark'}`}

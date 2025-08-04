@@ -6,6 +6,7 @@ using BE_Nhahang.Interfaces.Admin.Food;
 using BE_Nhahang.Interfaces.Admin.FoodCategory;
 using BE_Nhahang.Interfaces.Admin.Log;
 using BE_Nhahang.Interfaces.Admin.Payment;
+using BE_Nhahang.Interfaces.Admin.Payment.Settings;
 using BE_Nhahang.Interfaces.Admin.Sendmail;
 using BE_Nhahang.Interfaces.Admin.Table;
 using BE_Nhahang.Interfaces.Admin.Table.Booking;
@@ -40,6 +41,7 @@ namespace BE_Nhahang.Extensions
             services.AddScoped<ITableOrderService, TableOrderService>();
             services.AddScoped<IVietQrService, VietQrService>();
             services.AddScoped<IPaymentQrService, PaymentQrService>();
+            services.AddScoped<IPaymentQrBankAccountService, PaymentQrBankAccountService>();
 
             // thêm các service khác ở đây
             services.AddScoped<IHttpContextAccessorService, HttpContextAccessorService>();

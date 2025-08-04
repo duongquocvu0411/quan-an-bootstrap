@@ -19,10 +19,10 @@ namespace BE_Nhahang.Controllers.Admin.Pyment
 
         [HttpPost("create-for-booking/{bookingId:int}")]
         [Authorize]
-        public async Task<IActionResult> CreateForBooking([FromRoute] int bookingId)
+        public async Task<IActionResult> CreateForBooking([FromRoute] int bookingId, int bankId)
         {
 
-            var res = await _service.CreateBookingPaymentQrAsync(bookingId);
+            var res = await _service.CreateBookingPaymentQrAsync(bookingId,bankId );
             return StatusCode(res.code, res);
         }
     }
