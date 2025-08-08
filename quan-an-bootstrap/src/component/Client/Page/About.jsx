@@ -1,72 +1,131 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import { getAllAboutClient } from "../../../be/Client/About/About.api";
+import { getClientFeatureList } from "../../../be/Client/Feture/FeatureClient.api";
 
-function About ()  {
+
+function About() {
+  const [aboutList, setAboutList] = useState([]);
+  const [features, setFeatures] = useState([]);
+
+  useEffect(() => {
+  
+    fetchData();
+    fetchFeatures();
+  }, []);
+
+  const fetchData = async () => {
+      try {
+        const data = await getAllAboutClient();
+        setAboutList(data);
+      } catch (err) {
+        console.error("Lỗi khi lấy danh sách About:", err);
+      }
+    };
+
+    const fetchFeatures = async () => {
+    try {
+      const res = await getClientFeatureList();
+      if (res.isSuccess) {
+        setFeatures(res.data);
+      } else {
+        console.error("Lỗi khi lấy danh sách Features:", res.message);
+      }
+    } catch (err) {
+      console.error("Lỗi khi gọi API Features:", err);
+    }
+  };
+
   return (
     <>
       {/* About Section */}
       <br /><br /><br /><br /><br /><br /><br />
       <div className="container" data-aos="fade-up" data-aos-delay="100">
-        <div className="row gy-4">
-          <div className="col-lg-6 order-1 order-lg-2">
-            <img src="assets/img/about.jpg" className="img-fluid about-img" alt="About" />
-          </div>
-          <div className="col-lg-6 order-2 order-lg-1 content">
-            <h3>Voluptatem dignissimos provident</h3>
-            <p className="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i className="bi bi-check2-all" /> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i className="bi bi-check2-all" /> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i className="bi bi-check2-all" /> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-            </ul>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-            </p>
-          </div>
-        </div>
+        {aboutList.map((about, index) => {
+          const sortedImages = [...about.images].sort((a, b) => a.displayOrder - b.displayOrder);
+          const isEven = index % 2 === 0;
+
+          return (
+            <div
+              className={`row gy-5 ${index === 0 ? "mb-5" : ""} align-items-center`}
+              key={about.id}
+            >
+              {/* Swiper Carousel */}
+              <div className={`col-lg-6 order-1 order-lg-2`}>
+                <Swiper
+                  modules={[Autoplay, Pagination]}
+                  autoplay={{ delay: 3000, disableOnInteraction: false }}
+                  pagination={{ clickable: true }}
+                  loop={true}
+                  className="about-swiper"
+                >
+                  {sortedImages.map((img) => (
+                    <SwiperSlide key={img.id}>
+                      <img
+                        src={img.url}
+                        className="img-fluid about-img w-100"
+                        alt={`Slide ${img.id}`}
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+
+              {/* Content */}
+              <div className="col-lg-6 order-2 order-lg-1 content">
+                <div dangerouslySetInnerHTML={{ __html: about.descriptions }} />
+              </div>
+            </div>
+          );
+        })}
       </div>
 
-      <section id="why-us" className="why-us section">
-        {/* Section Title */}
-        <div className="container section-title" data-aos="fade-up">
-          <h2>WHY US</h2>
-          <p>Why Choose Our Restaurant</p>
-        </div>
-        {/* End Section Title */}
+      {/* WHY US Section */}
+<section id="why-us" className="why-us section">
+  <div className="container section-title" data-aos="fade-up">
+    <h2>WHY US</h2>
+    <p>Why Choose Our Company</p>
+  </div>
 
-        <div className="container">
-          <div className="row gy-4">
-            <div className="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-              <div className="card-item">
-                <span>01</span>
-                <h4><a href="#" className="stretched-link">Lorem Ipsum</a></h4>
-                <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
-              </div>
-            </div>
-
-            <div className="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-              <div className="card-item">
-                <span>02</span>
-                <h4><a href="#" className="stretched-link">Repellat Nihil</a></h4>
-                <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
-              </div>
-            </div>
-
-            <div className="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-              <div className="card-item">
-                <span>03</span>
-                <h4><a href="#" className="stretched-link">Ad ad velit qui</a></h4>
-                <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
-              </div>
-            </div>
+  <div className="container">
+    <div className="row gy-4">
+      {features.map((item, index) => (
+        <div
+          className="col-lg-4"
+          data-aos="fade-up"
+          data-aos-delay={(index + 1) * 100}
+          key={item.id}
+        >
+          <div className="card-item text-center">
+            {/* Bỏ span STT ở đây */}
+            {item.image && (
+              <img
+                src={item.image}
+                alt={item.title}
+                className="mb-3"
+                style={{ width: "60px", height: "60px", objectFit: "contain" }}
+              />
+            )}
+            <h4>
+              <a href={item.link} className="stretched-link">
+                {item.title}
+              </a>
+            </h4>
+            <p>{item.description}</p>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
     </>
   );
-};
+}
 
 export default About;

@@ -1,7 +1,11 @@
 ﻿using BE_Mentoring.Services.AdminID;
+using BE_Nhahang.Interfaces.Admin.About;
 using BE_Nhahang.Interfaces.Admin.AdminId;
 using BE_Nhahang.Interfaces.Admin.Auth;
 using BE_Nhahang.Interfaces.Admin.Auth.Account;
+using BE_Nhahang.Interfaces.Admin.Contact;
+using BE_Nhahang.Interfaces.Admin.Contact.ContactAdmin;
+using BE_Nhahang.Interfaces.Admin.Feature;
 using BE_Nhahang.Interfaces.Admin.Food;
 using BE_Nhahang.Interfaces.Admin.FoodCategory;
 using BE_Nhahang.Interfaces.Admin.Log;
@@ -42,6 +46,10 @@ namespace BE_Nhahang.Extensions
             services.AddScoped<IVietQrService, VietQrService>();
             services.AddScoped<IPaymentQrService, PaymentQrService>();
             services.AddScoped<IPaymentQrBankAccountService, PaymentQrBankAccountService>();
+            services.AddScoped<IContactUserService, ContactUserService>();
+            services.AddScoped<IContactAdminService, ContactAdminService>();
+            services.AddScoped<IAboutService, AboutService>();
+            services.AddScoped<IFeatureService, FeatureService>();
 
             // thêm các service khác ở đây
             services.AddScoped<IHttpContextAccessorService, HttpContextAccessorService>();

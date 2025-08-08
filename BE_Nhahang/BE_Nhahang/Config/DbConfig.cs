@@ -1,4 +1,6 @@
 ﻿using BE_Nhahang.Models.Entities;
+using BE_Nhahang.Models.Entities.About;
+using BE_Nhahang.Models.Entities.Contact;
 using BE_Nhahang.Models.Entities.Payment;
 using BE_Nhahang.Models.Entities.Table;
 using Microsoft.AspNetCore.Identity;
@@ -29,6 +31,15 @@ namespace BE_Nhahang.Config
 
         public DbSet<PaymentQrModel> PaymentQr { get; set; }
         public DbSet<PaymentQrBankAccountModel> PaymentQrBankAccounts { get; set; }
+
+        public DbSet<ContactUserModel> ContactUsers { get; set; }
+        public DbSet<ContactUserReplyModel> ContactUserReplies {  get; set; }
+        public DbSet<ContactAdminModel> ContactAdmins { get; set; }
+
+        public DbSet<AboutModel>Abouts { get; set; }
+        public DbSet<AboutImageModel> AboutImages { get; set; }
+
+        public DbSet<FeaturesModel> Features { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -115,6 +126,25 @@ namespace BE_Nhahang.Config
 
                 qr.HasIndex(x => x.BookingId);
             });
+
+
+
+            builder.Entity<ContactUserModel>()
+          .HasOne<ContactUserReplyModel>()
+          .WithOne(r => r.ContactUser)
+          .HasForeignKey<ContactUserReplyModel>(r => r.ContactUserId)
+          .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<ContactUserModel>()
+       .HasOne(c => c.ContactUserReply)
+       .WithOne(r => r.ContactUser)
+       .HasForeignKey<ContactUserReplyModel>(r => r.ContactUserId);
+
+            builder.Entity<AboutModel>()
+       .HasMany(a => a.Images)
+       .WithOne(i => i.About)
+       .HasForeignKey(i => i.AboutId)
+       .OnDelete(DeleteBehavior.Cascade);
 
         }
     }

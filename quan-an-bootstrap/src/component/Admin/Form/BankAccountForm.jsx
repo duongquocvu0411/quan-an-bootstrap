@@ -4,6 +4,7 @@ import Sidebar from '../Page/Sidebar';
 import { DarkModeContext } from '../DarkModeContext';
 import { toast, ToastContainer } from 'react-toastify';
 import { createPaymentQrAccount, getPaymentQrById, updatePaymentQrAccount } from '../../../be/Admin/Payment/payment.api';
+import useRoleGuard from '../../hook/useRoleGuard';
 
 const BankAccountForm = ({ mode }) => {
   const { id } = useParams();
@@ -21,6 +22,9 @@ const BankAccountForm = ({ mode }) => {
 
   const isDetail = mode === 'detail';
   const isEdit = mode === 'edit';
+    const isAddOrEdit = mode === 'add' || mode === 'edit';
+
+     useRoleGuard(['Admin'], isAddOrEdit);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,6 +42,8 @@ const BankAccountForm = ({ mode }) => {
     if ((isDetail || isEdit) && id) {
       fetchData();
     }
+
+  
   }, [id, mode]);
 
   const handleChange = (e) => {

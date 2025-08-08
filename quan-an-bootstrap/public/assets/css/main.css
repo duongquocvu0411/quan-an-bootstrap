@@ -1076,6 +1076,9 @@ section,
 .about .content p:last-child {
   margin-bottom: 0;
 }
+.ckeditor-wrapper .ck-editor__editable_inline {
+  min-height: 250px;
+}
 
 .about .about-img {
   border: 6px solid color-mix(in srgb, var(--default-color), transparent 80%);

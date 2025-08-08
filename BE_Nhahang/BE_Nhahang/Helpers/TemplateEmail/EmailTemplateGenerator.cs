@@ -1,4 +1,5 @@
 ﻿using BE_Nhahang.DTOS.Admin.Tables.Booking;
+using BE_Nhahang.Models.Entities.Contact;
 using System.Globalization;
 
 namespace BE_Nhahang.Helpers.TemplateEmail
@@ -47,5 +48,147 @@ namespace BE_Nhahang.Helpers.TemplateEmail
                 <p style='font-size:13px;color:#999'>Được gửi tự động từ hệ thống đặt bàn GSV</p>
             </div>";
         }
+
+
+
+        public static string GenerateForSystem(ContactUserModel model)
+        {
+            return $@"
+                <h3>📩 Thông tin liên hệ mới từ khách hàng</h3>
+                <table style='font-family: Arial; border-collapse: collapse;'>
+                    <tr><td><strong>👤 Họ tên:</strong></td><td>{model.YourName}</td></tr>
+                    <tr><td><strong>📧 Email:</strong></td><td>{model.Email}</td></tr>
+                    <tr><td><strong>📞 SĐT:</strong></td><td>{model.Phone}</td></tr>
+                    <tr><td><strong>📌 Tiêu đề:</strong></td><td>{model.Subject}</td></tr>
+                    <tr><td style='vertical-align: top;'><strong>📝 Nội dung:</strong></td><td>{model.Message}</td></tr>
+                </table>
+                <hr style='margin: 20px 0;'>
+                <p style='color: gray;'>⏰ Gửi lúc: {model.CreatedAt:HH:mm dd/MM/yyyy}</p>";
+        }
+
+
+
+        public static string GenerateReplyForUser(ContactUserModel contact, string replyMsg)
+        {
+            return $@"
+    <html>
+      <head>
+        <style>
+          body {{
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+          }}
+          .container {{
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+          }}
+          .header {{
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #0056b3;
+          }}
+          .footer {{
+            margin-top: 30px;
+            font-size: 12px;
+            color: #888;
+          }}
+        </style>
+      </head>
+      <body>
+        <div class='container'>
+          <div class='header'>Phản hồi từ Nhà hàng</div>
+          <p>Chào <strong>{contact.YourName}</strong>,</p>
+          <p>Chúng tôi đã nhận được phản hồi từ bạn với nội dung:</p>
+          <blockquote style='background: #fff; border-left: 4px solid #ccc; padding: 10px;'>
+            {contact.Message}
+          </blockquote>
+          <p>Phản hồi của chúng tôi:</p>
+          <blockquote style='background: #e6f7ff; border-left: 4px solid #1890ff; padding: 10px;'>
+            {replyMsg}
+          </blockquote>
+          <p>Trân trọng,<br />Đội ngũ hỗ trợ Nhà hàng</p>
+          <div class='footer'>
+            Email này được gửi tự động, vui lòng không trả lời trực tiếp.
+          </div>
+        </div>
+      </body>
+    </html>";
+        }
+
+
+        public static string GenerateReplyForSystem(ContactUserModel contact, string replyMsg)
+        {
+            return $@"
+    <html>
+      <head>
+        <style>
+          body {{
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+          }}
+          .container {{
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fffbe6;
+          }}
+          .header {{
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #fa8c16;
+          }}
+          .section {{
+            margin-bottom: 10px;
+          }}
+          .label {{
+            font-weight: bold;
+            color: #595959;
+          }}
+        </style>
+      </head>
+      <body>
+        <div class='container'>
+          <div class='header'>Xác nhận phản hồi liên hệ từ Admin</div>
+
+          <div class='section'>
+            <span class='label'>Tên người liên hệ:</span> {contact.YourName}
+          </div>
+          <div class='section'>
+            <span class='label'>Email:</span> {contact.Email}
+          </div>
+          <div class='section'>
+            <span class='label'>Tiêu đề:</span> {contact.Subject}
+          </div>
+          <div class='section'>
+            <span class='label'>Nội dung liên hệ:</span><br />
+            <blockquote style='background: #fff; border-left: 4px solid #ccc; padding: 10px;'>
+              {contact.Message}
+            </blockquote>
+          </div>
+          <div class='section'>
+            <span class='label'>Phản hồi từ Admin ({contact.RepliedBy}):</span><br />
+            <blockquote style='background: #f0f5ff; border-left: 4px solid #2f54eb; padding: 10px;'>
+              {replyMsg}
+            </blockquote>
+          </div>
+          <div class='section'>
+            <span class='label'>Thời gian phản hồi:</span> {contact.RepliedAt?.ToString("HH:mm dd/MM/yyyy")}
+          </div>
+        </div>
+      </body>
+    </html>";
+        }
+
+
     }
 }

@@ -7,6 +7,7 @@ import ReactPaginate from 'react-paginate';
 import moment from 'moment';
 import { toast, ToastContainer } from 'react-toastify';
 import { deletePaymentQrAccounts, getAllPaymentQrAccounts } from '../../../be/Admin/Payment/payment.api';
+import  Cookies  from 'js-cookie';
 
 const BankAccountTable = () => {
   const navigate = useNavigate();
@@ -18,6 +19,8 @@ const BankAccountTable = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [showInactive, setShowInactive] = useState(false); // Lọc trạng thái
 
+  const role = Cookies.get('roles');
+const isAdmin = role && JSON.parse(role).includes('Admin');
   const pageSize = 10;
 
   const fetchAccounts = async (page = 1) => {
@@ -188,12 +191,22 @@ const BankAccountTable = () => {
                         <button className="btn btn-info btn-sm me-2" onClick={() => navigate(`/admin/bank-accounts/detail/${item.id}`)}>
                           <i className="bi bi-eye"></i>
                         </button>
-                        <button className="btn btn-primary btn-sm me-2" onClick={() => navigate(`/admin/bank-accounts/edit/${item.id}`)}>
-                          <i className="bi bi-pencil-square"></i>
-                        </button>
-                        <button className="btn btn-danger btn-sm" onClick={() => handleDelete(item.id)}>
-                          <i className="bi bi-trash"></i>
-                        </button>
+                       {isAdmin  && (
+                              <>
+                                <button
+                                  className="btn btn-primary btn-sm me-2"
+                                  onClick={() => navigate(`/admin/bank-accounts/edit/${item.id}`)}
+                                >
+                                  <i className="bi bi-pencil-square"></i>
+                                </button>
+                                <button
+                                  className="btn btn-danger btn-sm"
+                                  onClick={() => handleDelete(item.id)}
+                                >
+                                  <i className="bi bi-trash"></i>
+                                </button>
+                              </>
+                            )}
                       </td>
                     </tr>
                   ))

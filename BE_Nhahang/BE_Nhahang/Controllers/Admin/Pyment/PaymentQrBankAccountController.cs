@@ -23,7 +23,7 @@ namespace BE_Nhahang.Controllers.Admin.Pyment
             return Ok(result);
         }
 
-        [Authorize(Roles ="Admin")]
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] int page = 1, [FromQuery] int pageSize = 10,bool isActive = true)
         {
@@ -32,7 +32,7 @@ namespace BE_Nhahang.Controllers.Admin.Pyment
         }
 
         [HttpGet("{id}")]
-           [Authorize(Roles ="Admin")]
+           [Authorize]
         public async Task<IActionResult> GetById(int id)
         {
             var result = await _service.GetByIdAsync(id);
