@@ -3,6 +3,7 @@ using BE_Nhahang.Interfaces.Admin.About;
 using BE_Nhahang.Interfaces.Admin.AdminId;
 using BE_Nhahang.Interfaces.Admin.Auth;
 using BE_Nhahang.Interfaces.Admin.Auth.Account;
+using BE_Nhahang.Interfaces.Admin.Chefs;
 using BE_Nhahang.Interfaces.Admin.Contact;
 using BE_Nhahang.Interfaces.Admin.Contact.ContactAdmin;
 using BE_Nhahang.Interfaces.Admin.Feature;
@@ -50,6 +51,7 @@ namespace BE_Nhahang.Extensions
             services.AddScoped<IContactAdminService, ContactAdminService>();
             services.AddScoped<IAboutService, AboutService>();
             services.AddScoped<IFeatureService, FeatureService>();
+            services.AddScoped<IChefsService, ChefsService>();
 
             // thêm các service khác ở đây
             services.AddScoped<IHttpContextAccessorService, HttpContextAccessorService>();

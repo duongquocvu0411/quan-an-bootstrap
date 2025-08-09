@@ -1649,6 +1649,19 @@ section,
   transition: bottom ease-in-out 0.4s;
 }
 
+
+
+.chef-img {
+  width: 90%;
+  height: 650px; /* Chiều cao cố định */
+  border-radius: 8px;
+  object-fit: fill; /* Ép ảnh lấp đầy khung */
+}
+
+
+
+
+
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/

@@ -1,5 +1,6 @@
 ﻿using BE_Nhahang.Models.Entities;
 using BE_Nhahang.Models.Entities.About;
+using BE_Nhahang.Models.Entities.Chefs;
 using BE_Nhahang.Models.Entities.Contact;
 using BE_Nhahang.Models.Entities.Payment;
 using BE_Nhahang.Models.Entities.Table;
@@ -40,6 +41,8 @@ namespace BE_Nhahang.Config
         public DbSet<AboutImageModel> AboutImages { get; set; }
 
         public DbSet<FeaturesModel> Features { get; set; }
+
+        public DbSet<ChefsModel> Chefs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

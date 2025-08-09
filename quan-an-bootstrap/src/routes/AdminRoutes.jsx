@@ -23,6 +23,8 @@ import AboutAdmin from '../component/Admin/Page/AboutAdmin';
 import FormAboutAdmin from '../component/Admin/Form/FormAboutAdmin';
 import FeatureAdmin from '../component/Admin/Page/FeatureAdmin';
 import FormFeatureAdmin from '../component/Admin/Form/FormFeatureAdmin';
+import ChefsAdmin from '../component/Admin/Page/ChefsAdmin';
+import FormChefsAdmin from '../component/Admin/Form/FormChefsAdmin';
 
 const AdminRoutes = () => {
   return (
@@ -97,6 +99,13 @@ const AdminRoutes = () => {
           <Route path="/features/edit/:id" element={<FormFeatureAdmin mode="edit" />} />
           <Route path="/features/detail/:id" element={<FormFeatureAdmin mode="detail" />} />
 
+
+
+          {/* chefs */}
+          <Route path="/chefs" element={<ChefsAdmin />} />
+      <Route path="/chefs/add" element={<FormChefsAdmin mode="add" />} />
+      <Route path="/chefs/edit/:id" element={<FormChefsAdmin mode="edit" />} />
+      <Route path="/chefs/detail/:id" element={<FormChefsAdmin mode="detail" />} />
         </Route>
       </Routes>
     </DarkModeProvider>

@@ -15,6 +15,9 @@ function Home() {
     return(
      
        <>
+         <div className="index-page ">
+
+        <div className="main ">
                 {/* Hero Section */}
                 <section id="hero" className="hero section dark-background">
                 <img src="assets/img/hero-bg.jpg" alt data-aos="fade-in" />
@@ -94,7 +97,8 @@ function Home() {
              </section>
             {/* End Contact */}
       
-
+</div>
+</div>
  
    </>
     )

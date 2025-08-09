@@ -15,6 +15,7 @@ import Booking from '../component/Client/Page/Booking';
 import Chefs from '../component/Client/Page/Chefs';
 
 
+
 const ClientRoutes = () => {
     return (
         <>
@@ -26,6 +27,7 @@ const ClientRoutes = () => {
                 <Route path="/specials" element={<Specials />} />
                 <Route path="/event" element={<Event />} />
                 <Route path="/chefs" element={<Chefs />} />
+             
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/testimonial" element={<Testimonials />} />
                 <Route path="/contact" element={<Contact />} />
